@@ -10,8 +10,8 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#0a0a0c;--sf:#111114;--sf2:#18181c;--sf3:#1e1e23;
-  --bd:rgba(255,255,255,0.06);--bdh:rgba(255,255,255,0.15);
-  --tx:#ede9e3;--txm:#706d69;--txd:#35342f;
+  --bd:rgba(255,255,255,0.11);--bdh:rgba(255,255,255,0.24);
+  --tx:#ede9e3;--txm:#9e9b96;--txd:#6b6860;
   --ac:#c8a96e;--acd:rgba(200,169,110,0.10);--acg:rgba(200,169,110,0.22);
   --p1:#7eb8d4;--p1d:rgba(126,184,212,0.10);--p1b:rgba(126,184,212,0.28);
   --p2:#8ec49a;--p2d:rgba(142,196,154,0.10);--p2b:rgba(142,196,154,0.28);
@@ -28,11 +28,11 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 /* ── HEADER ── */
 header{padding:2.8rem 2.5rem 1.8rem;max-width:1100px;margin:0 auto;border-bottom:.5px solid var(--bd);opacity:0;transform:translateY(-8px);animation:fadeUp .6s ease forwards}
 .hd-row{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.eyebrow{font-family:var(--fm);font-size:9.5px;letter-spacing:.15em;color:var(--ac);text-transform:uppercase;margin-bottom:.6rem}
+.eyebrow{font-family:var(--fm);font-size:12px;letter-spacing:.15em;color:var(--ac);text-transform:uppercase;margin-bottom:.6rem}
 header h1{font-family:var(--fd);font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:400;line-height:1.1;letter-spacing:-.02em}
 header h1 em{font-style:italic;color:var(--ac)}
 header p{margin-top:.6rem;font-size:12px;color:var(--txm);line-height:1.8;max-width:520px}
-.badge{display:inline-flex;align-items:center;gap:6px;background:var(--sf);border:.5px solid var(--bd);border-radius:20px;padding:5px 12px;font-family:var(--fm);font-size:9.5px;color:var(--txm);white-space:nowrap}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--sf);border:.5px solid var(--bd);border-radius:20px;padding:5px 12px;font-family:var(--fm);font-size:12px;color:var(--txm);white-space:nowrap}
 .bdot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
 
 /* ── PHASE NAV ── */
@@ -42,11 +42,11 @@ header p{margin-top:.6rem;font-size:12px;color:var(--txm);line-height:1.8;max-wi
 .pnav:last-child{border-radius:0 8px 8px 0}
 .pnav+.pnav{border-left:none}
 .pnav:hover{color:var(--tx);z-index:1}
-.pnav-num{font-family:var(--fm);font-size:9px;opacity:.45}
-.pnav-sub{font-size:9px;color:var(--txd);margin-left:2px}
-.pnav[data-phase="1"].active{border-color:var(--p1);background:var(--p1d);color:var(--p1);z-index:2}
-.pnav[data-phase="2"].active{border-color:var(--p2);background:var(--p2d);color:var(--p2);z-index:2}
-.pnav[data-phase="3"].active{border-color:var(--p3);background:var(--p3d);color:var(--p3);z-index:2}
+.pnav-num{font-family:var(--fm);font-size:12px;opacity:.45}
+.pnav-sub{font-size:12px;color:var(--txd);margin-left:2px}
+.pnav[data-phase="1"].active{border-color:var(--p1);background:var(--p1d);color:var(--p1);z-index:2;box-shadow:inset 0 -2px 0 var(--p1)}
+.pnav[data-phase="2"].active{border-color:var(--p2);background:var(--p2d);color:var(--p2);z-index:2;box-shadow:inset 0 -2px 0 var(--p2)}
+.pnav[data-phase="3"].active{border-color:var(--p3);background:var(--p3d);color:var(--p3);z-index:2;box-shadow:inset 0 -2px 0 var(--p3)}
 
 /* ── MAIN ── */
 main{max-width:1100px;margin:0 auto;padding:2rem 2.5rem 5rem;display:grid;grid-template-columns:1fr 360px;gap:2.5rem;align-items:start}
@@ -58,7 +58,7 @@ main{max-width:1100px;margin:0 auto;padding:2rem 2.5rem 5rem;display:grid;grid-t
 /* ── SUB-TABS (Phase 1) ── */
 .subtab-nav{display:flex;gap:0;margin-bottom:1.8rem;border:.5px solid var(--bd);border-radius:8px;overflow:hidden}
 .stab2-panel{display:none}.stab2-panel.active{display:block}
-.stab{flex:1;padding:10px 8px;text-align:center;cursor:pointer;font-family:var(--fm);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--txm);background:var(--sf);transition:all .15s;user-select:none;border-right:.5px solid var(--bd)}
+.stab{flex:1;padding:10px 8px;text-align:center;cursor:pointer;font-family:var(--fm);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--txm);background:var(--sf);transition:all .15s;user-select:none;border-right:.5px solid var(--bd)}
 .stab:last-child{border-right:none}
 .stab:hover{color:var(--tx);background:var(--sf2)}
 .stab.active{background:var(--p1d);color:var(--p1);border-color:var(--p1)}
@@ -67,21 +67,21 @@ main{max-width:1100px;margin:0 auto;padding:2rem 2.5rem 5rem;display:grid;grid-t
 
 /* ── SECTIONS ── */
 .section{margin-bottom:1.8rem}
-.sec-label{font-family:var(--fm);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--txd);margin-bottom:.8rem;display:flex;align-items:center;gap:8px}
+.sec-label{font-family:var(--fm);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--txm);margin-bottom:.9rem;display:flex;align-items:center;gap:8px}
 .sec-label::after{content:'';flex:1;height:.5px;background:var(--bd)}
-.apl{font-family:var(--fm);font-size:8px;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:3px}
+.apl{font-family:var(--fm);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:3px}
 .face-pl{background:rgba(126,184,212,.12);color:var(--p1);border:.5px solid var(--p1b)}
 .out-pl{background:rgba(200,169,110,.10);color:var(--ac);border:.5px solid rgba(200,169,110,.22)}
 .st-pl{background:rgba(196,126,184,.10);color:var(--p3);border:.5px solid var(--p3b)}
 
 .field-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:8px}
-.field{display:flex;flex-direction:column;gap:4px}
-.field>label{font-size:10.5px;color:var(--txm)}
+.field{display:flex;flex-direction:column;gap:6px}
+.field>label{font-size:12.5px;color:var(--txm)}
 
-select,input[type="text"],input[type="number"],textarea{
+select,input[type="text"],input[type="number"],textarea{font-size:13px!important;
   background:var(--sf);border:.5px solid var(--bd);border-radius:6px;
   color:var(--tx);font-family:var(--fb);font-size:12.5px;font-weight:300;
-  padding:8px 10px;outline:none;transition:border-color .18s,background .18s;
+  padding:8px 10px;outline:none;transition:all .15s ease;
   width:100%;appearance:none;-webkit-appearance:none
 }
 select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='5' viewBox='0 0 9 5'%3E%3Cpath d='M1 1l3.5 3 3.5-3' stroke='%23706d69' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center;padding-right:24px;cursor:pointer}
@@ -90,8 +90,8 @@ textarea{resize:vertical;min-height:58px;line-height:1.6;font-size:12px}
 
 /* ── TAGS ── */
 .tag-row{display:flex;flex-wrap:wrap;gap:5px}
-.tag{font-size:11px;font-family:var(--fb);font-weight:300;padding:5px 11px;border-radius:20px;border:.5px solid var(--bd);background:transparent;color:var(--txm);cursor:pointer;transition:all .13s;user-select:none}
-.tag:hover{border-color:var(--bdh);color:var(--tx)}
+.tag{font-size:13px;font-family:var(--fb);font-weight:300;padding:5px 11px;border-radius:20px;border:.5px solid var(--bd);background:transparent;color:var(--txm);cursor:pointer;transition:all .15s ease;user-select:none}
+.tag:hover{border-color:var(--bdh);color:var(--tx);background:rgba(255,255,255,.04)}
 .tag.p1.active{background:var(--p1d);border-color:var(--p1);color:var(--p1)}
 .tag.p2.active{background:var(--p2d);border-color:var(--p2);color:var(--p2)}
 .tag.p3.active{background:var(--p3d);border-color:var(--p3);color:var(--p3)}
@@ -99,19 +99,19 @@ textarea{resize:vertical;min-height:58px;line-height:1.6;font-size:12px}
 
 /* ── ANCHOR CHIPS ── */
 .anchor-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
-.achip{font-size:10px;font-family:var(--fm);padding:3px 9px;border-radius:4px;border:.5px solid rgba(255,255,255,.13);background:var(--sf2);color:var(--txm);cursor:pointer;transition:all .13s;user-select:none}
+.achip{font-size:12px;font-family:var(--fm);padding:3px 9px;border-radius:4px;border:.5px solid rgba(255,255,255,.13);background:var(--sf2);color:var(--txm);cursor:pointer;transition:all .15s ease;user-select:none}
 .achip:hover{border-color:rgba(255,255,255,.28);color:var(--tx)}
 .achip.active{background:rgba(126,184,212,.12);border-color:var(--p1b);color:var(--p1)}
 
 /* ── KEYWORD BANK ── */
 .kw-bank{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
-.kw{font-family:var(--fm);font-size:10px;padding:5px 10px;border-radius:5px;border:.5px solid rgba(255,255,255,.18);background:var(--sf2);color:var(--txm);cursor:pointer;transition:all .13s;user-select:none}
+.kw{font-family:var(--fm);font-size:12px;padding:5px 10px;border-radius:5px;border:.5px solid rgba(255,255,255,.18);background:var(--sf2);color:var(--txm);cursor:pointer;transition:all .15s ease;user-select:none}
 .kw:hover{border-color:var(--p2b);background:var(--p2d);color:var(--p2)}
 .kw.on{background:var(--p2d);border-color:var(--p2);color:var(--p2)}
 
 /* ── FRAMING PICKER ── */
 .frame-row{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:10px}
-.fcard{border:.5px solid var(--bd);border-radius:8px;background:var(--sf);cursor:pointer;padding:10px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;transition:all .15s;user-select:none}
+.fcard{border:.5px solid var(--bd);border-radius:10px;background:var(--sf);cursor:pointer;padding:10px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;transition:all .15s;user-select:none}
 .fcard:hover{border-color:var(--bdh);background:var(--sf2)}
 .fcard.active{border-color:var(--ac);background:var(--acd)}
 .fcard svg{width:34px;height:58px}
@@ -121,39 +121,39 @@ textarea{resize:vertical;min-height:58px;line-height:1.6;font-size:12px}
 .fcard.active svg .bf{fill:var(--ac)}
 .fcard.active svg .bd2{fill:rgba(200,169,110,.2)}
 .fcard.active svg .cl{stroke:var(--ac)}
-.fcard-label{font-size:10px;color:var(--txm)}
+.fcard-label{font-size:12px;color:var(--txm)}
 .fcard.active .fcard-label{color:var(--ac)}
-.fcard-sub{font-family:var(--fm);font-size:8px;color:var(--txd);margin-top:-2px}
+.fcard-sub{font-family:var(--fm);font-size:12px;color:var(--txd);margin-top:-2px}
 
 /* ── COMPARE BOX ── */
 .cmp{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:10px 0}
 .cmp-item{border-radius:7px;padding:9px 12px}
 .cmp-bad{background:rgba(196,112,112,.06);border:.5px solid rgba(196,112,112,.22)}
 .cmp-good{background:rgba(126,196,154,.06);border:.5px solid rgba(126,196,154,.22)}
-.cmp-label{font-family:var(--fm);font-size:8px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:5px}
+.cmp-label{font-family:var(--fm);font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:5px}
 .cmp-bad .cmp-label{color:var(--bad)}.cmp-good .cmp-label{color:var(--good)}
-.cmp-text{font-size:11px;line-height:1.65;color:var(--txm)}
+.cmp-text{font-size:13px;line-height:1.65;color:var(--txm)}
 
 /* ── PHYSICS SELECT — expandable labels ── */
 .select-annotated{position:relative}
 .select-annotated select{padding-bottom:9px}
-.sa-hint{font-family:var(--fm);font-size:9px;color:var(--txd);margin-top:3px;line-height:1.5;padding:0 2px}
+.sa-hint{font-family:var(--fm);font-size:12px;color:var(--txd);margin-top:3px;line-height:1.5;padding:0 2px}
 
 /* ── SCREEN TEST BOX ── */
 .st-box{background:var(--sf2);border:.5px solid var(--p3b);border-radius:8px;padding:13px 15px;margin-bottom:14px}
-.st-box-title{font-family:var(--fm);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--txd);margin-bottom:9px;display:flex;align-items:center;gap:8px}
-.st-badge{font-size:8px;padding:1px 6px;border-radius:3px;background:var(--p3d);color:var(--p3);border:.5px solid var(--p3b)}
+.st-box-title{font-family:var(--fm);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--txd);margin-bottom:9px;display:flex;align-items:center;gap:8px}
+.st-badge{font-size:12px;padding:1px 6px;border-radius:3px;background:var(--p3d);color:var(--p3);border:.5px solid var(--p3b)}
 .st-template{font-family:var(--fm);font-size:12px;line-height:2.1;color:var(--p3)}
-.st-tok{padding:1px 6px;border-radius:3px;font-size:11px}
+.st-tok{padding:1px 6px;border-radius:3px;font-size:13px}
 .st-t1{background:var(--p1d);color:var(--p1);border:.5px solid var(--p1b)}
 .st-t2{background:var(--acd);color:var(--ac);border:.5px solid rgba(200,169,110,.22)}
-.st-preview{font-family:var(--fm);font-size:11px;color:var(--txm);margin-top:4px;line-height:1.7}
+.st-preview{font-family:var(--fm);font-size:13px;color:var(--txm);margin-top:4px;line-height:1.7}
 
 /* ── CONCEPT BANNER ── */
-.banner{background:var(--sf2);border:.5px solid var(--bd);border-radius:9px;padding:11px 14px;margin-bottom:1.5rem;display:flex;gap:11px;align-items:flex-start}
+.banner{background:var(--sf2);border:.5px solid var(--bd);border-radius:10px;padding:11px 14px;margin-bottom:1.5rem;display:flex;gap:11px;align-items:flex-start}
 .banner-icon{font-size:15px;flex-shrink:0;margin-top:1px}
-.banner-title{font-family:var(--fm);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
-.banner-text{font-size:11px;color:var(--txm);line-height:1.72}
+.banner-title{font-family:var(--fb);font-size:14px;font-weight:500;margin-bottom:4px}
+.banner-text{font-size:12.5px;color:var(--txm);line-height:1.7}
 .banner-text strong{font-weight:400;color:var(--tx)}
 
 /* ── PROGRESS BAR ── */
@@ -163,20 +163,20 @@ textarea{resize:vertical;min-height:58px;line-height:1.6;font-size:12px}
 
 /* ── OUTPUT PANEL ── */
 .out-panel{position:sticky;top:2rem;opacity:0;animation:fadeUp .5s ease .38s forwards}
-.out-card{background:var(--bg);border:none;border-radius:11px;overflow:hidden;margin-bottom:10px}
-.out-hd{padding:11px 16px;border-bottom:.5px solid var(--bd);display:flex;align-items:center;gap:8px}
+.out-card{background:var(--bg);border:none;border-radius:0;overflow:hidden;margin-bottom:6px}
+.out-hd{display:flex;align-items:center;justify-content:space-between;padding:10px 16px 10px;border-bottom:.5px solid rgba(255,255,255,.07);margin-bottom:4px}
 .out-hd-dot{width:6px;height:6px;border-radius:50%;transition:background .3s}
-.out-hd span{font-family:var(--fm);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--txm)}
+.out-hd span{font-family:var(--fm);font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--txm)}
 
 /* prompt blocks */
-.pb-block{padding:12px 16px;margin-bottom:8px;background:var(--sf);border:.5px solid var(--bd);border-radius:9px}
+.pb-block{padding:14px 18px;margin-bottom:8px;background:var(--sf2);border:.5px solid rgba(255,255,255,.1);border-radius:10px}
 .pb-block:last-child{margin-bottom:0}
 .pb-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
-.pb-label{font-family:var(--fm);font-size:10px;letter-spacing:.04em;color:var(--txm);font-weight:500}
-.pb-copy{font-family:var(--fm);font-size:9px;padding:3px 9px;border-radius:4px;border:.5px solid var(--bd);background:transparent;color:var(--txm);cursor:pointer;transition:all .13s}
-.pb-copy:hover{border-color:var(--bdh);color:var(--tx);background:var(--sf2)}
+.pb-label{font-family:var(--fm);font-size:12px;letter-spacing:.04em;color:var(--txm);font-weight:500}
+.pb-copy{font-family:var(--fm);font-size:12px;padding:3px 11px;border-radius:4px;border:.5px solid var(--bd);background:transparent;color:var(--txd);cursor:pointer;transition:all .15s ease}
+.pb-copy:hover{border-color:var(--bdh);color:var(--txm);background:rgba(255,255,255,.04);color:var(--tx);background:var(--sf2)}
 .pb-copy.flash{background:var(--acd);border-color:var(--ac);color:var(--ac)}
-.pb-text{font-family:var(--fm);font-size:10.5px;line-height:1.8;word-break:break-word;color:var(--txm)}
+.pb-text{font-family:var(--fm);font-size:13px;line-height:1.8;word-break:break-word;color:var(--tx)}
 .pb-face   .pb-label{color:var(--p1)}.pb-face   .pb-text{color:var(--p1)}
 .pb-outfit .pb-label{color:var(--ac)}.pb-outfit .pb-text{color:var(--ac)}
 .pb-fusion .pb-label{color:var(--p3)}.pb-fusion .pb-text{color:var(--p3)}
@@ -186,21 +186,23 @@ textarea{resize:vertical;min-height:58px;line-height:1.6;font-size:12px}
 .pb-cam    .pb-label{color:#9ab8cc}.pb-cam    .pb-text{color:#9ab8cc}
 .pb-audio  .pb-label{color:#c0a0cc}.pb-audio  .pb-text{color:#c0a0cc}
 .pb-choreo .pb-label{color:var(--ac)}.pb-choreo .pb-text{color:var(--ac)}
+.pb-ko .pb-label{color:var(--txd)}.pb-ko .pb-text{color:var(--txm);white-space:pre-line;font-style:italic}
+
 
 .out-meta{padding:8px 16px;border-top:.5px solid var(--bd);display:flex;justify-content:space-between}
-.out-meta span{font-family:var(--fm);font-size:9px;color:var(--txd)}
+.out-meta span{font-family:var(--fm);font-size:12px;color:var(--txd)}
 
 /* ── NEXT PHASE BUTTON (main CTA) ── */
 
 
 /* ── FOOTER ── */
 footer{max-width:1100px;margin:0 auto;padding:1.5rem 2.5rem;border-top:.5px solid var(--bd);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:.04em}
+footer span{font-family:var(--fm);font-size:12px;color:var(--txd);letter-spacing:.04em}
 
 
 
 /* ── OUTPUT APP BADGES ── */
-.ob-app-badge{display:inline-flex;align-items:center;gap:5px;font-family:var(--fm);font-size:8px;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:3px;margin-bottom:6px}
+.ob-app-badge{display:inline-flex;align-items:center;gap:5px;font-family:var(--fm);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:3px;margin-bottom:6px}
 .ob-badge-sc{background:rgba(126,184,212,.12);color:var(--p1);border:.5px solid var(--p1b)}
 .ob-badge-nb{background:var(--p3d);color:var(--p3);border:.5px solid var(--p3b)}
 .ob-badge-ac{background:var(--acd);color:var(--ac);border:.5px solid rgba(200,169,110,.28)}
@@ -214,14 +216,14 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 .phys-chip.active{border-color:var(--p3);background:var(--p3d)}
 .phys-chip.active .pc-name{color:var(--p3)}
 .phys-chip.active .pc-desc{color:rgba(196,126,184,.6)}
-.pc-name{font-size:11.5px;font-weight:400;color:var(--tx);margin-bottom:3px}
-.pc-desc{font-family:var(--fm);font-size:8.5px;color:var(--txm);line-height:1.5;letter-spacing:.02em}
+.pc-name{font-size:13px;font-weight:400;color:var(--tx);margin-bottom:3px}
+.pc-desc{font-family:var(--fm);font-size:12px;color:var(--txm);line-height:1.5;letter-spacing:.02em}
 
 .react-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:8px}
 .react-chip{border:.5px solid rgba(255,255,255,.13);border-radius:7px;background:var(--sf2);cursor:pointer;padding:8px 10px;transition:all .15s;user-select:none;text-align:center}
 .react-chip:hover{border-color:var(--bdh);background:var(--sf2)}
 .react-chip.active{border-color:var(--p3);background:var(--p3d)}
-.rc-name{font-size:10.5px;color:var(--txm);line-height:1.5}
+.rc-name{font-size:12.5px;color:var(--txm);line-height:1.5}
 .react-chip.active .rc-name{color:var(--p3)}
 
 /* ── PALETTE CHIPS ── */
@@ -229,7 +231,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 .pchip{width:26px;height:26px;border-radius:50%;border:2px solid transparent;cursor:pointer;transition:all .15s;flex-shrink:0;position:relative}
 .pchip:hover{transform:scale(1.15)}
 .pchip.active{border-color:var(--tx);box-shadow:0 0 0 2px var(--bg)}
-.pchip-label{font-family:var(--fm);font-size:9px;color:var(--txd);align-self:center;margin-left:4px}
+.pchip-label{font-family:var(--fm);font-size:12px;color:var(--txd);align-self:center;margin-left:4px}
 
 /* ── ARCHETYPE CARDS ── */
 .arch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:4px}
@@ -239,18 +241,18 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 .arch-card:hover .arch-name{color:var(--tx)}
 .arch-card.active .arch-name{color:var(--p1)}
 .arch-card.active .arch-ref{color:rgba(126,184,212,.6)}
-.arch-name{font-size:11.5px;font-weight:400;color:var(--txm);margin-bottom:2px;line-height:1.3}
-.arch-ref{font-family:var(--fm);font-size:8.5px;color:var(--txm);letter-spacing:.04em}
+.arch-name{font-size:13px;font-weight:400;color:var(--txm);margin-bottom:2px;line-height:1.3}
+.arch-ref{font-family:var(--fm);font-size:12px;color:var(--txm);letter-spacing:.04em}
 
 /* ── MAKEUP CHIPS ── */
 .makeup-row{display:flex;flex-wrap:wrap;gap:5px}
-.mchip{font-size:10.5px;font-family:var(--fb);padding:4px 10px;border-radius:20px;border:.5px solid rgba(255,255,255,.14);background:var(--sf2);color:var(--txm);cursor:pointer;transition:all .13s;user-select:none}
+.mchip{font-size:12.5px;font-family:var(--fb);padding:4px 10px;border-radius:20px;border:.5px solid rgba(255,255,255,.14);background:var(--sf2);color:var(--txm);cursor:pointer;transition:all .15s ease;user-select:none}
 .mchip:hover{border-color:rgba(255,255,255,.3);color:var(--tx)}
 .mchip.active{background:var(--p1d);border-color:var(--p1);color:var(--p1)}
 
 /* ── OUTFIT PALETTE ── */
 .outfit-palette-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:6px}
-.opchip{font-family:var(--fm);font-size:9px;padding:4px 11px;border-radius:20px;border:.5px solid rgba(255,255,255,.14);background:var(--sf2);color:var(--txm);cursor:pointer;transition:all .13s;user-select:none;display:flex;align-items:center;gap:6px}
+.opchip{font-family:var(--fm);font-size:12px;padding:4px 11px;border-radius:20px;border:.5px solid rgba(255,255,255,.14);background:var(--sf2);color:var(--txm);cursor:pointer;transition:all .15s ease;user-select:none;display:flex;align-items:center;gap:6px}
 .op-swatches{display:flex;gap:2px;align-items:center;flex-shrink:0}
 .opchip:hover{border-color:rgba(255,255,255,.28);color:var(--tx)}
 .opchip.active{background:var(--acd);border-color:var(--ac);color:var(--ac)}
@@ -266,29 +268,29 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 .phys-chip.active{border-color:var(--p3);background:var(--p3d)}
 .phys-chip.active .pc-name{color:var(--p3)}
 .phys-chip.active .pc-desc{color:rgba(196,126,184,.55)}
-.pc-name{font-size:11.5px;font-weight:400;color:var(--tx);margin-bottom:3px}
-.pc-desc{font-family:var(--fm);font-size:8.5px;color:var(--txd);line-height:1.5}
+.pc-name{font-size:13px;font-weight:400;color:var(--tx);margin-bottom:3px}
+.pc-desc{font-family:var(--fm);font-size:12px;color:var(--txd);line-height:1.5}
 .react-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:8px}
-.react-chip{border:.5px solid rgba(255,255,255,.13);border-radius:6px;background:var(--sf2);cursor:pointer;padding:7px 10px;transition:all .15s;user-select:none;font-size:11px;color:var(--txm);line-height:1.4}
+.react-chip{border:.5px solid rgba(255,255,255,.13);border-radius:6px;background:var(--sf2);cursor:pointer;padding:7px 10px;transition:all .15s;user-select:none;font-size:13px;color:var(--txm);line-height:1.4}
 .react-chip:hover{border-color:rgba(255,255,255,.28);color:var(--tx);background:var(--sf3)}
 .react-chip.active{border-color:var(--p3);background:var(--p3d);color:var(--p3)}
 
 /* ── OUTFIT PART CHIPS ── */
 .opart-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:6px}
-.opart-sublabel{font-family:var(--fm);font-size:8.5px;color:var(--txd);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;margin-top:8px}
+.opart-sublabel{font-family:var(--fm);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--txm);margin-bottom:6px;margin-top:4px}
 /* 아이템 타입 — 단일 선택, 골든 테마 */
-.otype{font-size:10.5px;font-family:var(--fb);padding:4px 11px;border-radius:20px;border:.5px solid rgba(200,169,110,.38);background:rgba(200,169,110,.04);color:var(--txm);cursor:pointer;transition:all .13s;user-select:none}
+.otype{font-size:12.5px;font-family:var(--fb);padding:4px 11px;border-radius:20px;border:.5px solid rgba(200,169,110,.38);background:rgba(200,169,110,.04);color:var(--txm);cursor:pointer;transition:all .15s ease;user-select:none}
 .otype:hover{border-color:rgba(200,169,110,.6);color:var(--tx)}
 .otype.active{background:var(--acd);border-color:var(--ac);color:var(--ac)}
 /* 소재/디테일 — 다중 선택, 서브듀드 */
-.odetail{font-size:10px;font-family:var(--fm);padding:3px 9px;border-radius:4px;border:.5px solid rgba(255,255,255,.13);background:var(--sf2);color:var(--txm);cursor:pointer;transition:all .13s;user-select:none}
+.odetail{font-size:12px;font-family:var(--fm);padding:4px 11px;border-radius:6px;border:.5px solid rgba(255,255,255,.13);background:var(--sf2);color:var(--txm);cursor:pointer;transition:all .15s ease;user-select:none}
 .odetail:hover{border-color:rgba(255,255,255,.28);color:var(--tx)}
 .odetail.active{background:var(--acd);border-color:rgba(200,169,110,.4);color:var(--ac)}
 
 /* ── STEP DIVIDER ── */
 #makeup-intensity-wrap.hidden{opacity:.3;pointer-events:none}
 .pb-step-divider{padding:9px 16px;display:flex;align-items:center;gap:8px;border-bottom:.5px solid var(--bd);background:var(--p3d)}
-.pb-step-text{font-family:var(--fm);font-size:8px;letter-spacing:.09em;text-transform:uppercase;color:var(--p3)}
+.pb-step-text{font-family:var(--fm);font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--p3)}
 .pb-step-dot{width:5px;height:5px;border-radius:50%;background:var(--p3);flex-shrink:0}
 
 /* ── OUTFIT ARCHETYPE ── */
@@ -296,8 +298,8 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 .oarch-card{border:.5px solid rgba(255,255,255,.13);border-radius:7px;background:var(--sf2);cursor:pointer;padding:9px 10px;transition:all .15s;user-select:none}
 .oarch-card:hover{border-color:rgba(200,169,110,.38)}
 .oarch-card.active{border-color:var(--ac);background:var(--acd)}
-.oarch-name{font-size:11.5px;color:var(--txm);margin-bottom:2px;line-height:1.3}
-.oarch-ref{font-family:var(--fm);font-size:8.5px;color:var(--txd)}
+.oarch-name{font-size:13px;color:var(--txm);margin-bottom:2px;line-height:1.3}
+.oarch-ref{font-family:var(--fm);font-size:12px;color:var(--txd)}
 .oarch-card:hover .oarch-name{color:var(--tx)}
 .oarch-card.active .oarch-name{color:var(--ac)}
 .oarch-card.active .oarch-ref{color:rgba(200,169,110,.55)}
@@ -307,44 +309,61 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 .oahead:hover{border-color:rgba(255,255,255,.22)}
 .oahead.open{border-radius:7px 7px 0 0;border-bottom:.5px solid var(--bd);margin-bottom:0}
 .oahead-left{display:flex;align-items:center;gap:8px}
-.oahead-title{font-family:var(--fm);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--txm)}
+.oahead-title{font-family:var(--fm);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--txm)}
 .oahead.open .oahead-title{color:var(--tx)}
-.oahead-badge{font-family:var(--fm);font-size:8px;padding:1px 6px;border-radius:3px;background:var(--acd);color:var(--ac);border:.5px solid rgba(200,169,110,.28);display:none}
+.oahead-badge{font-family:var(--fm);font-size:12px;padding:1px 6px;border-radius:3px;background:var(--acd);color:var(--ac);border:.5px solid rgba(200,169,110,.28);display:none}
 .oahead-badge.show{display:inline}
-.oahead-arrow{font-family:var(--fm);font-size:10px;color:var(--txd);transition:transform .2s;line-height:1}
+.oahead-arrow{font-family:var(--fm);font-size:12px;color:var(--txd);transition:transform .2s;line-height:1}
 .oahead.open .oahead-arrow{transform:rotate(90deg);color:var(--txm)}
 .oabody{display:none;padding:12px;border:.5px solid rgba(255,255,255,.13);border-top:none;border-radius:0 0 7px 7px;margin-bottom:6px}
 .oabody.open{display:block}
 .translating{opacity:.5;transition:opacity .2s}
-.trans-badge{font-family:var(--fm);font-size:8px;color:var(--txd);padding:2px 7px;background:var(--sf2);border:.5px solid var(--bd);border-radius:3px;display:inline-block;margin-top:3px}
+.trans-badge{font-family:var(--fm);font-size:12px;color:var(--txd);padding:2px 7px;background:var(--sf2);border:.5px solid var(--bd);border-radius:3px;display:inline-block;margin-top:3px}
 
 /* ── REF IMAGE ANALYSIS ── */
-.ref-upload-area{border:1.5px dashed rgba(126,184,212,.3);border-radius:10px;padding:16px;text-align:center;cursor:pointer;transition:all .2s;position:relative;background:var(--sf)}
+.ref-upload-area{border:1.5px dashed rgba(126,184,212,.3);border-radius:10px;padding:16px;text-align:center;cursor:pointer;transition:all .15s ease;position:relative;background:var(--sf)}
 .ref-upload-area:hover{border-color:var(--p1b);background:var(--p1d)}
 .ref-upload-area.has-image{border-style:solid;border-color:var(--p1b)}
 .ref-preview-img{max-height:140px;border-radius:7px;object-fit:cover;max-width:100%}
-.ref-upload-text{font-family:var(--fm);font-size:10px;color:var(--txd);letter-spacing:.04em;margin-top:6px}
+.ref-upload-text{font-family:var(--fm);font-size:12px;color:var(--txd);letter-spacing:.04em;margin-top:6px}
 .ref-analyze-btn{width:100%;margin-top:8px;padding:9px;border-radius:8px;cursor:pointer;font-family:var(--fb);font-size:12px;border:.5px solid var(--p1b);background:var(--p1d);color:var(--p1);transition:all .15s}
 .ref-analyze-btn:hover{opacity:.85}
 .ref-analyze-btn:disabled{opacity:.4;cursor:not-allowed}
 .ref-result-grid{display:grid;grid-template-columns:1fr;gap:5px;margin-top:10px}
 .ref-result-row{display:grid;grid-template-columns:64px 1fr auto;align-items:start;gap:8px;background:var(--sf2);border:.5px solid rgba(255,255,255,.12);border-radius:8px;padding:10px 12px}
-.ref-result-label{font-family:var(--fm);font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--p1);padding-top:1px;line-height:1.4}
-.ref-result-value{font-family:var(--fm);font-size:11px;color:var(--tx);line-height:1.6;word-break:break-word}
-.ref-apply-btn{font-family:var(--fm);font-size:9px;padding:3px 10px;border-radius:5px;border:.5px solid var(--p1b);background:transparent;color:var(--p1);cursor:pointer;flex-shrink:0;transition:all .13s;white-space:nowrap;align-self:start}
+.ref-result-label{font-family:var(--fm);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--p1);padding-top:1px;line-height:1.4}
+.ref-result-value{font-family:var(--fm);font-size:13px;color:var(--tx);line-height:1.6;word-break:break-word}
+.ref-apply-btn{font-family:var(--fm);font-size:12px;padding:3px 10px;border-radius:5px;border:.5px solid var(--p1b);background:transparent;color:var(--p1);cursor:pointer;flex-shrink:0;transition:all .15s ease;white-space:nowrap;align-self:start}
 .ref-apply-btn:hover{background:var(--p1d)}
-.ref-apply-all-btn{width:100%;margin-top:8px;padding:8px;border-radius:7px;cursor:pointer;font-family:var(--fb);font-size:11px;border:.5px solid var(--p1b);background:var(--p1d);color:var(--p1);transition:all .15s}
+.ref-apply-all-btn{width:100%;margin-top:8px;padding:8px;border-radius:7px;cursor:pointer;font-family:var(--fb);font-size:13px;border:.5px solid var(--p1b);background:var(--p1d);color:var(--p1);transition:all .15s}
 .ref-apply-all-btn:hover{opacity:.85}
-.ref-loading{text-align:center;padding:16px;font-family:var(--fm);font-size:10px;color:var(--txd)}
-.ref-error{color:#e57373;font-family:var(--fm);font-size:10px;padding:8px;background:rgba(229,115,115,.08);border-radius:6px;border:.5px solid rgba(229,115,115,.2)}
+.ref-loading{text-align:center;padding:16px;font-family:var(--fm);font-size:12px;color:var(--txd)}
+.ref-error{color:#e57373;font-family:var(--fm);font-size:12px;padding:8px;background:rgba(229,115,115,.08);border-radius:6px;border:.5px solid rgba(229,115,115,.2)}
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
-.shot-card{background:var(--sf2);border:.5px solid var(--p3b);border-radius:8px;padding:11px 13px;margin-bottom:6px;animation:fadeUp .2s ease}
+.shot-card{background:var(--sf2);border:.5px solid rgba(196,126,184,.35);border-radius:12px;padding:14px 15px;margin-bottom:8px;animation:fadeUp .2s ease}
 .shot-cut-div{display:flex;align-items:center;gap:8px;margin:2px 0 6px}
 .shot-cut-div .cl2{flex:1;height:.5px;background:var(--bd)}
-.shot-cut-div .ct{font-family:var(--fm);font-size:9px;letter-spacing:.1em;color:var(--txd)}
-.shot-remove{font-family:var(--fm);font-size:8.5px;padding:2px 8px;border-radius:4px;border:.5px solid rgba(229,115,115,.3);background:transparent;color:rgba(229,115,115,.7);cursor:pointer}
+.shot-cut-div .ct{font-family:var(--fm);font-size:12px;letter-spacing:.1em;color:var(--txd)}
+.shot-remove{font-family:var(--fm);font-size:12px;padding:2px 8px;border-radius:4px;border:.5px solid rgba(229,115,115,.3);background:transparent;color:rgba(229,115,115,.7);cursor:pointer}
 .shot-remove:hover{background:rgba(229,115,115,.1);color:#e57373}
-::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.07);border-radius:2px}
+.reg-card{display:flex;align-items:center;gap:10px;background:var(--sf2);border:.5px solid var(--bd);border-radius:10px;padding:8px 10px;transition:border-color .15s}
+.reg-card:hover{border-color:var(--bdh)}
+.reg-thumb{width:44px;height:44px;border-radius:5px;object-fit:cover;flex-shrink:0;background:var(--sf);border:.5px solid var(--bd);cursor:pointer;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.reg-thumb img{width:100%;height:100%;object-fit:cover;border-radius:4px}
+.reg-thumb .reg-thumb-placeholder{font-size:16px;position:absolute}
+.reg-thumb input[type=file]{display:none}
+.ai-drop-zone{background:var(--sf2);border:.5px dashed var(--bd);border-radius:7px;padding:8px;cursor:pointer;transition:all .15s;min-height:60px;display:flex;align-items:center;justify-content:center}
+.ai-drop-zone:hover{border-color:var(--p3b);background:var(--p3d)}
+.ai-drop-zone.has-img{border-style:solid;border-color:var(--p3b)}
+
+input::placeholder,textarea::placeholder{color:var(--txd);opacity:1}
+input:focus::placeholder,textarea:focus::placeholder{color:transparent}
+select{color:var(--txm)}
+select option{color:var(--tx);background:var(--sf2)}
+.pb-suffix-divider{height:.5px;background:rgba(255,255,255,0.08);margin:10px 0;position:relative}
+.pb-suffix-divider::before{content:'기본 적용';position:absolute;top:-7px;left:0;font-family:var(--fm);font-size:12px;color:var(--txd);letter-spacing:.06em;background:var(--sf);padding:0 6px}
+.pb-suffix-text{font-family:var(--fm);font-size:12px;line-height:1.7;color:var(--txd);word-break:break-word;font-style:italic}
+::-webkit-scrollbar{width:4px;height:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:4px}
 </style>
 </head>
 <body>
@@ -352,7 +371,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 <header>
   <div class="hd-row">
     <div>
-      <div class="eyebrow">Higgsfield Ecosystem</div>
+      <div class="eyebrow">AI Cinematic Directing Workflow</div>
       <h1>AI 시네마틱<br><em>디렉팅 워크플로우</em></h1>
       <p>Soul Cinema · Nano Banana Pro · Seedance 2.0 기반<br>캐릭터 에셋 → 시네마틱 세계관 → 물리 기반 액션 연출.</p>
     </div>
@@ -366,15 +385,15 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
 <div class="phase-nav">
   <div class="pnav active" data-phase="1" onclick="setPhase(1)">
-    <span class="pnav-num">01</span> 캐릭터 에셋
+    <span class="pnav-num">01</span> 👤 캐릭터 에셋
     <span class="pnav-sub">얼굴 · 의상 · 스크린 테스트</span>
   </div>
   <div class="pnav" data-phase="2" onclick="setPhase(2)">
-    <span class="pnav-num">02</span> 세계관 구축
+    <span class="pnav-num">02</span> 🌍 세계관 구축
     <span class="pnav-sub">조명 · 분위기 · 렌즈</span>
   </div>
   <div class="pnav" data-phase="3" onclick="setPhase(3)">
-    <span class="pnav-num">03</span> 액션 연출
+    <span class="pnav-num">03</span> 🎬 액션 연출
     <span class="pnav-sub">물리 · 카메라 · 오디오</span>
   </div>
 </div>
@@ -410,11 +429,11 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
     <!-- 모드 선택 탭 -->
     <div style="display:flex;gap:4px;margin-bottom:12px">
       <button id="ref-mode-person" onclick="setRefMode('person')"
-        style="flex:1;padding:8px;border-radius:7px;cursor:pointer;font-family:var(--fb);font-size:11px;border:.5px solid var(--p1);background:var(--p1d);color:var(--p1);transition:all .15s">
+        style="flex:1;padding:8px;border-radius:7px;cursor:pointer;font-family:var(--fb);font-size:13px;border:.5px solid var(--p1);background:var(--p1d);color:var(--p1);transition:all .15s">
         👤 인물 레퍼런스
       </button>
       <button id="ref-mode-outfit" onclick="setRefMode('outfit')"
-        style="flex:1;padding:8px;border-radius:7px;cursor:pointer;font-family:var(--fb);font-size:11px;border:.5px solid var(--bd);background:transparent;color:var(--txm);transition:all .15s">
+        style="flex:1;padding:8px;border-radius:7px;cursor:pointer;font-family:var(--fb);font-size:13px;border:.5px solid var(--bd);background:transparent;color:var(--txm);transition:all .15s">
         👗 의상 &amp; 액세서리
       </button>
     </div>
@@ -424,7 +443,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
         <input type="file" id="ref-image-input" accept="image/*" style="display:none">
         <div id="ref-upload-placeholder">
           <div style="font-size:26px;margin-bottom:6px">🖼</div>
-          <div class="ref-upload-text" style="font-size:11px">클릭 · 드래그 · Ctrl+V 붙여넣기</div>
+          <div class="ref-upload-text" style="font-size:13px">클릭 · 드래그 · Ctrl+V 붙여넣기</div>
           <div class="ref-upload-text" style="margin-top:3px">JPG · PNG · WEBP</div>
         </div>
         <img id="ref-preview" class="ref-preview-img" style="display:none">
@@ -453,7 +472,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 기본 설정 -->
     <div class="section">
-      <div class="sec-label">▸ 기본 설정</div>
+      <div class="sec-label">▸ 🧬 기본 설정</div>
       <div class="field-row">
         <div class="field"><label>인종</label>
           <select id="ethnicity">
@@ -484,7 +503,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
         </div>
       </div>
       <div class="field-row" style="margin-top:8px">
-        <div class="field"><label>매력도 수식어 <span style="font-size:9px;color:var(--txd);font-weight:300">— 선택</span></label>
+        <div class="field"><label>매력도 수식어 <span style="font-size:12px;color:var(--txd);font-weight:300">— 선택</span></label>
           <select id="face-attract">
             <option value="">없음</option>
             <option value="VERY ATTRACTIVE">VERY ATTRACTIVE</option>
@@ -501,7 +520,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 얼굴 디테일 -->
     <div class="section">
-      <div class="sec-label">▸ 얼굴 디테일</div>
+      <div class="sec-label">▸ 👁 얼굴 디테일</div>
       <div class="field-row">
         <div class="field"><label>이목구비 타입</label>
           <select id="eyes">
@@ -530,12 +549,33 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
             <option value="MELANCHOLIC DREAMY EXPRESSION, DISTANT GAZE">몽환적이고 우수에 찬</option>
           </select>
         </div>
+        <div class="field"><label>포즈 / 액션 <span style="font-size:12px;color:var(--txd);font-weight:300">— Action</span></label>
+          <select id="pose-action">
+            <option value="">없음 (기본)</option>
+            <optgroup label="── 정적">
+            <option value="STANDING UPRIGHT, STATUESQUE POSE, WEIGHT EVENLY DISTRIBUTED">직립 — 균형 잡힌 자세</option>
+            <option value="SLIGHTLY TURNED THREE-QUARTER ANGLE, CONFIDENT STANCE">쓰리쿼터 측면 — 입체감</option>
+            <option value="LEANING CASUALLY AGAINST SURFACE, RELAXED POSTURE">기대는 자세 — 여유로운</option>
+            <option value="SEATED RECLINED, CASUAL OCCUPYING POSE">앉아서 기대는 자세</option>
+            </optgroup>
+            <optgroup label="── 동적">
+            <option value="MID-MOTION DYNAMIC POSE, WEIGHT SHIFTING, CAUGHT IN ACTION">움직이는 순간 — 역동적</option>
+            <option value="ARMS CROSSED, ASSERTIVE CLOSED BODY LANGUAGE">팔짱 — 단호한</option>
+            <option value="ONE HAND RAISED GESTURING, EXPRESSIVE BODY LANGUAGE">한 손 제스처 — 표현적</option>
+            <option value="LOOKING OVER SHOULDER, BACKWARD GLANCE POSE">어깨 너머 뒤돌아보기</option>
+            </optgroup>
+            <optgroup label="── 감성">
+            <option value="HANDS GENTLY TOUCHING FACE, INTIMATE CLOSE-UP POSE">얼굴에 손 — 친밀감</option>
+            <option value="EYES CLOSED, INTROSPECTIVE MEDITATIVE POSE">눈 감은 — 내면적</option>
+            </optgroup>
+          </select>
+        </div>
       </div>
     </div>
 
     <!-- 메이크업 -->
     <div class="section">
-      <div class="sec-label">▸ 메이크업</div>
+      <div class="sec-label">▸ 💄 메이크업</div>
       <div class="makeup-row" id="makeup-tags">
         <span class="mchip" data-value="">없음</span>
         <span class="mchip active" data-value="NATURAL MINIMAL MAKEUP, CLEAN SKIN FOCUS">내추럴 / 노 메이크업</span>
@@ -560,7 +600,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 헤어 -->
     <div class="section">
-      <div class="sec-label">▸ 헤어</div>
+      <div class="sec-label">▸ 💇 헤어</div>
       <div class="field-row">
         <div class="field"><label>헤어 컬러</label>
           <select id="hair-color">
@@ -617,7 +657,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 의상 방향 + 렌더링 -->
     <div class="section">
-      <div class="sec-label">▸ 렌더링 &amp; 조명</div>
+      <div class="sec-label">▸ 💡 렌더링 &amp; 조명</div>
       <div class="field-row">
         <div class="field"><label>이미지 스타일</label>
           <select id="face-render">
@@ -625,10 +665,10 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
             <option value="PHOTOREALISTIC, ULTRA-HIGH RESOLUTION, HYPER-DETAILED RENDERING">하이퍼리얼리스틱</option>
             <option value="CINEMATIC PHOTOGRAPHY, PHOTOCHEMICAL GRADE, FILM GRAIN">시네마틱</option>
             <option value="EDITORIAL FASHION PHOTOGRAPHY, MAGAZINE-GRADE LIGHTING">에디토리얼 패션</option>
-            <option value="STYLIZED 3D, SOFT AMBIENT OCCLUSION, CLEAN MATTE SHADING, CASUAL GAME ART STYLE, SMOOTH ROUNDED FORMS">캐주얼 3D 스타일</option>
+            <option value="STYLIZED 3D, SOFT AMBIENT OCCLUSION, CLEAN MATTE SHADING, CASUAL GAME ART STYLE, SMOOTH ROUNDED FORMS">캐주얼 3D</option>
           </select>
         </div>
-        <div class="field"><label>렌더 엔진 <span style="font-size:9px;color:var(--txd);font-weight:300">— 선택</span></label>
+        <div class="field"><label>렌더 엔진 <span style="font-size:12px;color:var(--txd);font-weight:300">— 선택</span></label>
           <select id="face-renderer">
             <option value="">없음</option>
             <option value="UNREAL ENGINE 5, NANITE GEOMETRY, LUMEN GLOBAL ILLUMINATION, REAL-TIME RAY TRACING">UE5 — Lumen GI</option>
@@ -638,7 +678,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
         </div>
       </div>
       <div style="margin-top:8px">
-        <div class="opart-sublabel">조명 프리셋 <span style="font-size:8.5px;color:var(--txd);text-transform:none;letter-spacing:0">— 선택</span></div>
+        <div class="opart-sublabel">조명 프리셋 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— 선택</span></div>
         <div class="makeup-row" id="face-lighting-chips">
           <span class="mchip active" data-value="STUDIO SOFTBOX DIFFUSION, EVEN FILL LIGHT, FLAT KEY">스튜디오 소프트박스</span>
           <span class="mchip" data-value="RIM LIGHTING, BACKLIT SEPARATION HALO, EDGE LIGHT">림 라이트</span>
@@ -649,14 +689,14 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
         </div>
       </div>
       <div id="lighting-mismatch-warn" style="display:none;margin-top:8px;padding:7px 11px;background:rgba(200,169,110,.08);border:.5px solid rgba(200,169,110,.35);border-radius:6px;display:flex;align-items:center;gap:7px">
-        <span style="font-size:11px">⚠</span>
-        <span style="font-family:var(--fm);font-size:9.5px;color:var(--ac);line-height:1.4" id="lighting-mismatch-text"></span>
+        <span style="font-size:13px">⚠</span>
+        <span style="font-family:var(--fm);font-size:12px;color:var(--ac);line-height:1.4" id="lighting-mismatch-text"></span>
       </div>
     </div>
 
     <!-- 시그니처 디테일 앵커 -->
     <div class="section">
-      <div class="sec-label">▸ 시그니처 앵커 <span style="font-size:9px;color:var(--txd);text-transform:none;letter-spacing:0">— 캐릭터를 구별하는 고유 마커 (복수 선택 가능)</span></div>
+      <div class="sec-label">▸ 📌 시그니처 앵커 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— 캐릭터를 구별하는 고유 마커 (복수 선택 가능)</span></div>
       <div class="anchor-row" id="anchor-tags">
         <span class="achip" data-value="SMALL DEMON HORNS ON TOP OF HEAD">악마 뿔 (소형)</span>
         <span class="achip" data-value="THIN RIMMED GLASSES">얇은 테 안경</span>
@@ -679,7 +719,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 샷 사이즈 + 카메라 앵글 -->
     <div class="section">
-      <div class="sec-label">▸ 샷 사이즈 &amp; 카메라 앵글 <span style="font-size:9px;color:var(--txd);text-transform:none;letter-spacing:0">— 얼굴 에셋 생성용</span></div>
+      <div class="sec-label">▸ 🎥 샷 사이즈 &amp; 카메라 앵글 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— 얼굴 에셋 생성용</span></div>
       <div class="frame-row" id="face-framing-grid">
         <div class="fcard" data-value="MEDIUM CLOSE-UP (MCU), HEAD AND SHOULDERS FRAME,">
           <svg viewBox="0 0 34 58"><ellipse class="bd2" cx="17" cy="8" rx="7" ry="8"/><path class="bd2" d="M7,15Q9,14 12,14Q15,15 17,15Q19,15 22,14Q25,14 27,15L29,25Q23,29 17,29Q11,29 5,25Z"/><path class="bd2" d="M5,25Q4,33 5,42Q7,44 10,44L10,33L17,35L24,33L24,44Q27,44 29,42Q30,33 29,25Q23,29 17,29Q11,29 5,25Z"/><path class="bd2" d="M10,44L9,58L14,58L16,47L17,48L18,47L20,58L25,58L24,44Z"/><ellipse class="bf" cx="17" cy="8" rx="7" ry="8"/><path class="bf" d="M7,15Q9,14 12,14Q15,15 17,15Q19,15 22,14Q25,14 27,15L29,25Q23,29 17,29Q11,29 5,25Z"/><line class="cl" x1="1" y1="29" x2="33" y2="29"/></svg>
@@ -727,7 +767,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 컬러 팔레트 -->
     <div class="section">
-      <div class="sec-label">▸ 컬러 팔레트</div>
+      <div class="sec-label">▸ 🎨 컬러 팔레트</div>
       <div class="outfit-palette-row" id="outfit-palette">
         <span class="opchip active" data-value="OLIVE KHAKI AND EARTH TONES">
           <span class="op-swatches"><span class="op-swatch" style="background:#6b7c3a"></span><span class="op-swatch" style="background:#8a7a4a"></span><span class="op-swatch" style="background:#5a4a2e"></span></span>올리브·카키
@@ -988,7 +1028,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 액세서리 & 하드웨어 (통합) -->
     <div class="section">
-      <div class="sec-label">▸ 액세서리 &amp; 하드웨어</div>
+      <div class="sec-label">▸ 💍 액세서리 &amp; 하드웨어</div>
       <div class="opart-sublabel">착용 액세서리</div>
       <div class="opart-row" id="outfit-acc-tags">
         <span class="odetail" data-value="SLIM METAL CHOKER">슬림 초커</span>
@@ -1048,7 +1088,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 스타일 무드 & 조명 -->
     <div class="section">
-      <div class="sec-label">▸ 스타일 무드 &amp; 조명</div>
+      <div class="sec-label">▸ ✨ 스타일 무드 &amp; 조명</div>
       <div class="opart-sublabel">무드</div>
       <div class="opart-row" id="outfit-mood-chips">
         <span class="odetail" data-value="FUTURISTIC TECHWEAR">테크웨어</span>
@@ -1065,10 +1105,10 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
         <span class="odetail" data-value="POST-APOCALYPTIC, SURVIVOR AESTHETIC">아포칼립스</span>
         <span class="odetail" data-value="GLITCHCORE, DIGITAL DISTORTION AESTHETIC">글리치코어</span>
       </div>
-      <div class="opart-sublabel">조명 <span style="font-size:8.5px;color:var(--txd);text-transform:none;letter-spacing:0">— ① 얼굴 에셋에서 설정</span></div>
+      <div class="opart-sublabel">조명 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— ① 얼굴 에셋에서 설정</span></div>
       <div id="outfit-lighting-sync" style="display:flex;align-items:center;gap:8px;padding:7px 11px;background:var(--sf2);border:.5px solid rgba(255,255,255,.1);border-radius:6px">
-        <span style="font-family:var(--fm);font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:var(--txd)">현재</span>
-        <span id="outfit-lighting-label" style="font-family:var(--fm);font-size:10px;color:var(--txm)">미설정 — ① 탭에서 조명 선택 시 자동 반영</span>
+        <span style="font-family:var(--fm);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--txd)">현재</span>
+        <span id="outfit-lighting-label" style="font-family:var(--fm);font-size:12px;color:var(--txm)">미설정 — ① 탭에서 조명 선택 시 자동 반영</span>
       </div>
       <div class="field" style="margin-top:6px">
         <input type="text" id="outfit-style-tag" placeholder="추가 스타일 키워드 (선택)">
@@ -1078,15 +1118,15 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
     <!-- 샷 사이즈 + 카메라 앵글 -->
     <!-- 이미지 스타일 & 렌더 엔진 -->
     <div class="section">
-      <div class="sec-label">▸ 이미지 스타일 &amp; 렌더 엔진 <span style="font-size:9px;color:var(--txd);text-transform:none;letter-spacing:0">— ① 얼굴 에셋에서 설정</span></div>
+      <div class="sec-label">▸ 🖥 이미지 스타일 &amp; 렌더 엔진 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— ① 얼굴 에셋에서 설정</span></div>
       <div style="display:flex;align-items:center;gap:8px;padding:7px 11px;background:var(--sf2);border:.5px solid rgba(255,255,255,.1);border-radius:6px">
-        <span style="font-family:var(--fm);font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:var(--txd)">현재</span>
-        <span id="render-sync-indicator" style="font-family:var(--fm);font-size:10px;color:var(--p1)">얼굴 에셋에서 설정됨</span>
+        <span style="font-family:var(--fm);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--txd)">현재</span>
+        <span id="render-sync-indicator" style="font-family:var(--fm);font-size:12px;color:var(--p1)">얼굴 에셋에서 설정됨</span>
       </div>
     </div>
 
     <div class="section">
-      <div class="sec-label">▸ 샷 사이즈 &amp; 카메라 앵글</div>
+      <div class="sec-label">▸ 🎥 샷 사이즈 &amp; 카메라 앵글</div>
       <div class="frame-row" id="outfit-framing-grid">
         <div class="fcard" data-value="MEDIUM SHOT (MS), WAIST-UP FRAME,">
           <svg viewBox="0 0 34 58"><path class="bd2" d="M5,25Q4,33 5,42Q7,44 10,44L10,33L17,35L24,33L24,44Q27,44 29,42Q30,33 29,25Q23,29 17,29Q11,29 5,25Z"/><path class="bd2" d="M10,44L9,58L14,58L16,47L17,48L18,47L20,58L25,58L24,44Z"/><ellipse class="bf" cx="17" cy="8" rx="7" ry="8"/><path class="bf" d="M7,15Q9,14 12,14Q15,15 17,15Q19,15 22,14Q25,14 27,15L29,25Q23,29 17,29Q11,29 5,25Z"/><path class="bf" d="M5,25Q4,30 5,36L7,36L10,33L17,35L24,33L27,36L29,36Q30,30 29,25Q23,29 17,29Q11,29 5,25Z"/><line class="cl" x1="1" y1="37" x2="33" y2="37"/></svg>
@@ -1128,7 +1168,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
       <div class="banner-icon">🎞️</div>
       <div>
         <div class="banner-title" style="color:var(--p3)">얼굴 + 의상 합성 — Nano Banana Pro</div>
-        <div class="banner-text"><span style="color:var(--p1);font-family:var(--fm);font-size:10px">IMAGE 1</span> (얼굴 에셋)과 <span style="color:var(--ac);font-family:var(--fm);font-size:10px">IMAGE 2</span> (의상 에셋)을 Nano Banana Pro에 업로드하고 아래 프롬프트를 붙여넣으세요. 완성된 이미지가 Seedance 2.0의 <strong>마스터 레퍼런스</strong>가 됩니다.</div>
+        <div class="banner-text"><span style="color:var(--p1);font-family:var(--fm);font-size:12px">IMAGE 1</span> (얼굴 에셋)과 <span style="color:var(--ac);font-family:var(--fm);font-size:12px">IMAGE 2</span> (의상 에셋)을 Nano Banana Pro에 업로드하고 아래 프롬프트를 붙여넣으세요. 완성된 이미지가 Seedance 2.0의 <strong>마스터 레퍼런스</strong>가 됩니다.</div>
       </div>
     </div>
 
@@ -1136,14 +1176,14 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
     <div style="background:var(--sf2);border:.5px solid var(--p3b);border-radius:10px;overflow:hidden;">
       <div style="padding:10px 14px 8px;border-bottom:.5px solid var(--bd);display:flex;align-items:center;justify-content:space-between">
         <div style="display:flex;align-items:center;gap:8px">
-          <span style="font-family:var(--fm);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--txd)">Nano Banana Pro 프롬프트</span>
-          <span style="font-size:8px;padding:1px 6px;border-radius:3px;background:var(--p3d);color:var(--p3);border:.5px solid var(--p3b);font-family:var(--fm)">마스터 레퍼런스</span>
+          <span style="font-family:var(--fm);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--txd)">Nano Banana Pro 프롬프트</span>
+          <span style="font-size:12px;padding:1px 6px;border-radius:3px;background:var(--p3d);color:var(--p3);border:.5px solid var(--p3b);font-family:var(--fm)">마스터 레퍼런스</span>
         </div>
-        <button id="st-copy-btn" style="font-family:var(--fm);font-size:9px;padding:3px 10px;border-radius:4px;border:.5px solid var(--bd);background:transparent;color:var(--txm);cursor:pointer;transition:all .13s">복사</button>
+        <button id="st-copy-btn" style="font-family:var(--fm);font-size:12px;padding:3px 10px;border-radius:4px;border:.5px solid var(--bd);background:transparent;color:var(--txm);cursor:pointer;transition:all .15s ease">복사</button>
       </div>
       <div style="padding:18px 20px">
         <div style="font-family:var(--fm);font-size:13px;line-height:2.2;color:var(--p3);letter-spacing:.01em">
-          THE CHARACTER FROM <span style="background:var(--p1d);color:var(--p1);padding:2px 7px;border-radius:3px;border:.5px solid var(--p1b);font-size:11px">IMAGE 1</span> WEARING THE OUTFIT FROM <span style="background:var(--acd);color:var(--ac);padding:2px 7px;border-radius:3px;border:.5px solid rgba(200,169,110,.22);font-size:11px">IMAGE 2</span>.
+          THE CHARACTER FROM <span style="background:var(--p1d);color:var(--p1);padding:2px 7px;border-radius:3px;border:.5px solid var(--p1b);font-size:13px">IMAGE 1</span> WEARING THE OUTFIT FROM <span style="background:var(--acd);color:var(--ac);padding:2px 7px;border-radius:3px;border:.5px solid rgba(200,169,110,.22);font-size:13px">IMAGE 2</span>.
         </div>
         <div style="font-family:var(--fm);font-size:13px;line-height:2;color:var(--p3);margin-top:2px;letter-spacing:.01em">
           FULL BODY SHOT, WHITE CYCLORAMA, SOFT DIFFUSED KEY LIGHT, PHOTOREALISTIC.
@@ -1169,7 +1209,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 뷰 구성 선택 -->
     <div class="section">
-      <div class="sec-label">▸ 뷰 구성 <span style="font-size:9px;color:var(--txd);text-transform:none;letter-spacing:0">— 포함할 뷰 선택 (복수 가능)</span></div>
+      <div class="sec-label">▸ 🔭 뷰 구성 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— 포함할 뷰 선택 (복수 가능)</span></div>
       <div class="anchor-row" id="sheet-view-tags">
         <span class="achip active" data-value="FRONT FULL BODY VIEW">정면 전신</span>
         <span class="achip active" data-value="BACK FULL BODY VIEW">후면 전신</span>
@@ -1183,7 +1223,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 배경 & 렌더링 -->
     <div class="section">
-      <div class="sec-label">▸ 배경 &amp; 렌더링</div>
+      <div class="sec-label">▸ 🖼 배경 &amp; 렌더링</div>
       <div class="field-row">
         <div class="field"><label>배경</label>
           <select id="sheet-bg">
@@ -1198,7 +1238,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
             <option value="PHOTOREALISTIC, FASHION EDITORIAL GRADE">리얼리스틱 패션</option>
             <option value="PHOTOREALISTIC, ULTRA-HIGH RESOLUTION, HYPER-DETAILED RENDERING">하이퍼리얼리스틱</option>
             <option value="CINEMATIC PHOTOGRAPHY, PHOTOCHEMICAL GRADE, FILM GRAIN">시네마틱</option>
-            <option value="STYLIZED 3D, SOFT AMBIENT OCCLUSION, CLEAN MATTE SHADING, CASUAL GAME ART STYLE">캐주얼 3D 스타일</option>
+            <option value="STYLIZED 3D, SOFT AMBIENT OCCLUSION, CLEAN MATTE SHADING, CASUAL GAME ART STYLE">캐주얼 3D</option>
             <option value="CINEMATIC PHOTOGRAPHY, PHOTOCHEMICAL GRADE, FILM GRAIN">시네마틱</option>
           </select>
         </div>
@@ -1207,17 +1247,17 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 생성 프롬프트 -->
     <div class="section">
-      <div class="sec-label">▸ 생성 프롬프트</div>
+      <div class="sec-label">▸ 📝 생성 프롬프트</div>
       <div style="background:var(--sf2);border:.5px solid rgba(200,169,110,.28);border-radius:10px;overflow:hidden;">
         <div style="padding:10px 14px 8px;border-bottom:.5px solid var(--bd);display:flex;align-items:center;justify-content:space-between">
           <div style="display:flex;align-items:center;gap:8px">
-            <span style="font-family:var(--fm);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--txd)">Soul Cinema 프롬프트</span>
-            <span style="font-size:8px;padding:1px 6px;border-radius:3px;background:var(--acd);color:var(--ac);border:.5px solid rgba(200,169,110,.28);font-family:var(--fm)">캐릭터 시트</span>
+            <span style="font-family:var(--fm);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--txd)">Soul Cinema 프롬프트</span>
+            <span style="font-size:12px;padding:1px 6px;border-radius:3px;background:var(--acd);color:var(--ac);border:.5px solid rgba(200,169,110,.28);font-family:var(--fm)">캐릭터 시트</span>
           </div>
-          <button id="sheet-copy-btn" style="font-family:var(--fm);font-size:9px;padding:3px 10px;border-radius:4px;border:.5px solid var(--bd);background:transparent;color:var(--txm);cursor:pointer;transition:all .13s">복사</button>
+          <button id="sheet-copy-btn" style="font-family:var(--fm);font-size:12px;padding:3px 10px;border-radius:4px;border:.5px solid var(--bd);background:transparent;color:var(--txm);cursor:pointer;transition:all .15s ease">복사</button>
         </div>
         <div style="padding:16px 18px">
-          <div id="sheet-prompt-preview" style="font-family:var(--fm);font-size:11.5px;line-height:1.9;color:var(--ac);letter-spacing:.01em;word-break:break-word"></div>
+          <div id="sheet-prompt-preview" style="font-family:var(--fm);font-size:13px;line-height:1.9;color:var(--ac);letter-spacing:.01em;word-break:break-word"></div>
         </div>
       </div>
     </div>
@@ -1255,11 +1295,11 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
     <!-- 모드 선택 -->
     <div style="display:flex;gap:4px;margin-bottom:12px">
       <button id="scene-ref-mode-scene" onclick="setSceneRefMode('scene')"
-        style="flex:1;padding:8px;border-radius:7px;cursor:pointer;font-family:var(--fb);font-size:11px;border:.5px solid var(--p2);background:var(--p2d);color:var(--p2);transition:all .15s">
+        style="flex:1;padding:8px;border-radius:7px;cursor:pointer;font-family:var(--fb);font-size:13px;border:.5px solid var(--p2);background:var(--p2d);color:var(--p2);transition:all .15s">
         🌆 씬 레퍼런스
       </button>
       <button id="scene-ref-mode-creature" onclick="setSceneRefMode('creature')"
-        style="flex:1;padding:8px;border-radius:7px;cursor:pointer;font-family:var(--fb);font-size:11px;border:.5px solid var(--bd);background:transparent;color:var(--txm);transition:all .15s">
+        style="flex:1;padding:8px;border-radius:7px;cursor:pointer;font-family:var(--fb);font-size:13px;border:.5px solid var(--bd);background:transparent;color:var(--txm);transition:all .15s">
         🐉 크리쳐 레퍼런스
       </button>
     </div>
@@ -1269,7 +1309,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
         <input type="file" id="scene-image-input" accept="image/*" style="display:none">
         <div id="scene-upload-placeholder">
           <div style="font-size:20px;margin-bottom:4px" id="scene-upload-icon">🌆</div>
-          <div class="ref-upload-text" style="font-size:10px">클릭 · 드래그 · Ctrl+V 붙여넣기</div>
+          <div class="ref-upload-text" style="font-size:12px">클릭 · 드래그 · Ctrl+V 붙여넣기</div>
         </div>
         <img id="scene-preview" class="ref-preview-img" style="display:none">
       </div>
@@ -1297,20 +1337,20 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
   <!-- ① 씬 스타일 -->
   <div class="section">
-    <div class="sec-label">▸ 씬 스타일 <span style="font-size:9px;color:var(--txd);text-transform:none;letter-spacing:0">— 프롬프트 오프닝 선언</span></div>
+    <div class="sec-label">▸ 🎬 씬 스타일 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— 프롬프트 오프닝 선언</span></div>
     <div class="opart-row" id="scene-quality-chips">
       <span class="odetail active" data-value="A HIGHLY CINEMATIC, PHOTOREALISTIC LIVE-ACTION STILL OF A">시네마틱 실사</span>
       <span class="odetail" data-value="A PHOTOREALISTIC ARCHITECTURAL VISUALIZATION OF A">건축 시각화</span>
       <span class="odetail" data-value="A HYPER-DETAILED CONCEPT ART ENVIRONMENT PAINTING OF A">컨셉 아트</span>
       <span class="odetail" data-value="A CINEMATIC AERIAL DRONE SHOT OF A">드론 항공 샷</span>
       <span class="odetail" data-value="AN ATMOSPHERIC CINEMATIC ESTABLISHING SHOT OF A">에스태블리시 샷</span>
-      <span class="odetail" data-value="A STYLIZED 3D STYLE, SOFT AMBIENT OCCLUSION, CLEAN MATTE SHADING, CASUAL GAME ART STYLE, SMOOTH ROUNDED FORMS, OF A">캐주얼 3D 스타일</span>
+      <span class="odetail" data-value="A STYLIZED 3D STYLE, SOFT AMBIENT OCCLUSION, CLEAN MATTE SHADING, CASUAL GAME ART STYLE, SMOOTH ROUNDED FORMS, OF A">캐주얼 3D</span>
     </div>
   </div>
 
   <!-- ② 렌더 엔진 -->
   <div class="section">
-    <div class="sec-label">▸ 렌더 엔진 <span style="font-size:9px;color:var(--txd);text-transform:none;letter-spacing:0">— 선택 시 렌더러 고유 시각 스타일 부여 (선택)</span></div>
+    <div class="sec-label">▸ ⚙️ 렌더 엔진 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— 선택 시 렌더러 고유 시각 스타일 부여 (선택)</span></div>
     <div class="opart-row" id="scene-renderer-chips">
       <span class="odetail" data-value="UNREAL ENGINE 5, NANITE GEOMETRY, LUMEN GLOBAL ILLUMINATION, REAL-TIME RAY TRACING, MEGASCANS TEXTURES">UE5 — Lumen GI</span>
       <span class="odetail" data-value="REDSHIFT RENDER, VOLUMETRIC LIGHTING, DEEP DEPTH OF FIELD, FILM VFX GRADE">Redshift</span>
@@ -1323,7 +1363,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
   <!-- ② 배경 & 장소 -->
   <div class="section">
-    <div class="sec-label">▸ 배경 &amp; 장소</div>
+    <div class="sec-label">▸ 🏙 배경 &amp; 장소</div>
     <div class="opart-row" id="setting-chips">
       <span class="odetail" data-value="urban cityscape, dense metropolitan environment">🏙 도시</span>
       <span class="odetail" data-value="forest environment, woodland setting">🌲 숲</span>
@@ -1345,7 +1385,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
   <!-- ③ 공간 스케일 & 타입 -->
   <div class="section">
-    <div class="sec-label">▸ 공간 스케일 &amp; 타입</div>
+    <div class="sec-label">▸ 📐 공간 스케일 &amp; 타입</div>
     <div class="opart-row" id="scene-scale-chips">
       <span class="odetail" data-value="vast open plaza, canyon-like space formed by surrounding high-rises">광장 — 캐니언형</span>
       <span class="odetail" data-value="rain-slicked narrow urban alley, neon reflections, compressed corridor">도시 골목 — 압축 통로</span>
@@ -1359,7 +1399,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
   <!-- ④ 건축 양식 -->
   <div class="section">
-    <div class="sec-label">▸ 건축 양식 <span style="font-size:9px;color:var(--txd);text-transform:none;letter-spacing:0">— 복수 선택 → 자동으로 HYBRID FUSION 적용</span></div>
+    <div class="sec-label">▸ 🏛 건축 양식 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— 복수 선택 → 자동으로 HYBRID FUSION 적용</span></div>
     <div class="opart-row" id="scene-arch-chips">
       <span class="odetail" data-value="East Asian architectural influence, curved tiled roofs, layered balconies, dense vertical structures">동아시아</span>
       <span class="odetail" data-value="European classical architecture, arched balconies, stone columns, ornate facades">유럽 클래식</span>
@@ -1374,7 +1414,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
   <!-- ⑤ 파괴 & 붕괴 레벨 -->
   <div class="section">
-    <div class="sec-label">▸ 파괴 &amp; 붕괴 레벨</div>
+    <div class="sec-label">▸ 💥 파괴 &amp; 붕괴 레벨</div>
     <div class="opart-row" id="scene-decay-chips">
       <span class="odetail" data-value="pristine and intact, clean maintained, no visible damage">프리스틴</span>
       <span class="odetail" data-value="weathered and worn, aged surfaces, subtle decay, faded materials">노후화</span>
@@ -1387,7 +1427,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
   <!-- ⑥ 환경 잔해 & 디테일 -->
   <div class="section">
-    <div class="sec-label">▸ 환경 잔해 &amp; 디테일</div>
+    <div class="sec-label">▸ 🪨 환경 잔해 &amp; 디테일</div>
     <div class="opart-row" id="scene-debris-chips">
       <span class="odetail" data-value="abandoned vehicles, rusted cars and buses, remnants of past life">방치된 차량</span>
       <span class="odetail" data-value="scattered personal belongings, furniture, evidence of sudden departure">개인 유품·가구</span>
@@ -1400,7 +1440,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
   <!-- ⑦ 대기 & 밀도 -->
   <div class="section">
-    <div class="sec-label">▸ 대기 &amp; 밀도</div>
+    <div class="sec-label">▸ 🌫 대기 &amp; 밀도</div>
     <div class="opart-row" id="density-chips">
       <span class="odetail" data-value="floating dust particles suspended in air, light ambient haze">부유 먼지 입자</span>
       <span class="odetail" data-value="heavy atmospheric fog and ground mist">짙은 안개</span>
@@ -1415,7 +1455,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
   <!-- ⑧ 환경 조명 -->
   <div class="section">
-    <div class="sec-label">▸ 환경 조명 <span style="font-size:9px;color:var(--txd);text-transform:none;letter-spacing:0">— 씬 전체 광환경 (인물 조명은 ① 에셋에서 설정)</span></div>
+    <div class="sec-label">▸ ☀️ 환경 조명 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— 씬 전체 광환경 (인물 조명은 ① 에셋에서 설정)</span></div>
     <div class="field-row">
       <div class="field"><label>조명 방식</label>
         <select id="lighting">
@@ -1457,7 +1497,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
   <!-- ⑨ 렌즈 & 색보정 -->
   <div class="section">
-    <div class="sec-label">▸ 렌즈 &amp; 색 보정</div>
+    <div class="sec-label">▸ 🔍 렌즈 &amp; 색 보정</div>
     <div class="field-row">
       <div class="field"><label>렌즈</label>
         <select id="lens">
@@ -1471,16 +1511,29 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
           <option value="macro lens, extreme close-up, micro-texture detail, shallow focus plane">매크로 극접사</option>
         </select>
       </div>
+      <div class="field"><label>카메라 하드웨어 <span style="font-size:12px;color:var(--txd);font-weight:300">— 선택</span></label>
+        <select id="scene-camera-hw">
+          <option value="">없음</option>
+          <option value="shot on ARRI Alexa cinema camera, organic cinematic texture, filmic highlight rolloff">ARRI Alexa — 영화 카메라</option>
+          <option value="shot on RED 8K digital cinema, hyper-detailed, vivid dynamic range">RED 8K — 디지털 시네마</option>
+          <option value="aerial DJI drone camera, wide environmental overview, crisp detail">DJI 드론 — 항공 촬영</option>
+          <option value="GoPro wide-angle action camera, immersive distortion, dynamic POV feel">GoPro — 액션 카메라</option>
+          <option value="shot on Fujifilm medium format, warm organic texture, natural environment color">Fujifilm — 필름 감성</option>
+          <option value="1980s analog film camera, grainy texture, slightly faded color, nostalgic">1980s 필름 — 아날로그</option>
+        </select>
+      </div>
+    </div>
+    <div class="field-row" style="margin-top:6px">
       <div class="field"><label>색 보정 / LUT</label>
         <select id="grade">
           <option value="">없음</option>
-          <option value="orange-teal complementary LUT, Hollywood three-strip grade">오렌지-틸 헐리우드</option>
-          <option value="ENR bleach bypass process, crushed blacks, silver retention desaturation">블리치 바이패스</option>
-          <option value="cool blue color temperature, desaturated silver-tone, noir contrast grade">쿨톤 누아르</option>
-          <option value="Kodak Vision3 5219 emulation, warm mid-tone bias, organic grain structure">코닥 5219 필름</option>
-          <option value="high chroma saturation, vivid pop-art palette, saturated primaries">고채도 팝 컬러</option>
-          <option value="muted analog grain, earth-tone palette, rolled-off highlight response">뮤티드 아날로그</option>
-          <option value="soft pastel palette, lifted shadow toe, hazy diffusion glow">파스텔 드리미</option>
+          <option value="orange-teal complementary LUT, Hollywood three-strip grade">오렌지-틸 헐리우드 — 따뜻한 피부, 차가운 배경</option>
+          <option value="ENR bleach bypass process, crushed blacks, silver retention desaturation">블리치 바이패스 — 탈색된 흑백 느낌</option>
+          <option value="cool blue color temperature, desaturated silver-tone, noir contrast grade">쿨톤 누아르 — 차갑고 어두운 분위기</option>
+          <option value="Kodak Vision3 5219 emulation, warm mid-tone bias, organic grain structure">코닥 5219 — 따뜻한 필름 질감</option>
+          <option value="high chroma saturation, vivid pop-art palette, saturated primaries">팝 컬러 — 선명하고 강렬한 원색</option>
+          <option value="muted analog grain, earth-tone palette, rolled-off highlight response">뮤티드 아날로그 — 흙빛 톤, 부드러운 하이라이트</option>
+          <option value="soft pastel palette, lifted shadow toe, hazy diffusion glow">파스텔 드리미 — 몽환적인 파스텔 빛 안개</option>
         </select>
       </div>
     </div>
@@ -1488,7 +1541,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
   <!-- DOF & 심도 -->
   <div class="section">
-    <div class="sec-label">▸ 심도 (Depth of Field) <span style="font-size:9px;color:var(--txd);text-transform:none;letter-spacing:0">— 배경 흐림 정도</span></div>
+    <div class="sec-label">▸ 🌀 심도 (Depth of Field) <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— 배경 흐림 정도</span></div>
     <div class="opart-sublabel">조리개 (Aperture)</div>
     <div class="opart-row" id="scene-dof-chips">
       <span class="odetail" data-value="f/1.2 aperture, extremely shallow depth of field, dreamy background separation, razor-thin focus plane">f/1.2 — 극얕은 심도</span>
@@ -1511,9 +1564,9 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
   <!-- ⑩ 컨셉 / 무드 (자유 입력) -->
   <div class="section">
-    <div class="sec-label">▸ 컨셉 / 무드 <span style="font-size:9px;color:var(--txd);text-transform:none;letter-spacing:0">— 위 설정들로 표현되지 않는 추가 분위기 묘사</span></div>
+    <div class="sec-label">▸ 🎭 컨셉 / 무드 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— 위 설정들로 표현되지 않는 추가 분위기 묘사</span></div>
     <div style="margin-bottom:8px">
-      <div style="font-size:9.5px;color:var(--txd);margin-bottom:6px">타 섹션과 겹치지 않는 질감 보조 키워드</div>
+      <div style="font-size:12px;color:var(--txd);margin-bottom:6px">타 섹션과 겹치지 않는 질감 보조 키워드</div>
       <div class="kw-bank" id="keyword-bank">
         <span class="kw" data-value="Floating ash, fine particulate drifting through air">부유하는 재</span>
         <span class="kw" data-value="Bioluminescent moss and glowing fungal patches on surfaces">발광 이끼</span>
@@ -1536,7 +1589,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
   <!-- ⑪ 이미지 비율 & 배경 전용 -->
   <div class="section">
-    <div class="sec-label">▸ 이미지 비율 &amp; 배경 전용 설정</div>
+    <div class="sec-label">▸ 📏 이미지 비율 &amp; 배경 전용 설정</div>
     <div class="opart-sublabel">이미지 비율</div>
     <div class="opart-row" id="scene-ratio-chips">
       <span class="odetail" data-value="16:9 WIDESCREEN ASPECT RATIO">16:9 와이드스크린</span>
@@ -1546,7 +1599,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
       <span class="odetail" data-value="9:16 VERTICAL PORTRAIT FORMAT">9:16 세로 (쇼츠)</span>
       <span class="odetail" data-value="4:5 PORTRAIT RATIO">4:5 포트레이트</span>
     </div>
-    <div class="opart-sublabel" style="margin-top:10px">배경 전용 생성 <span style="font-size:8.5px;color:var(--txd);text-transform:none">— 인물·캐릭터 미포함 배경 이미지 생성 시</span></div>
+    <div class="opart-sublabel" style="margin-top:10px">배경 전용 생성 <span style="font-size:12px;color:var(--txd);text-transform:none">— 인물·캐릭터 미포함 배경 이미지 생성 시</span></div>
     <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;background:var(--sf2);border:.5px solid rgba(255,255,255,.1);border-radius:7px">
       <label style="position:relative;display:inline-block;width:34px;height:18px;flex-shrink:0">
         <input type="checkbox" id="scene-bg-only" style="opacity:0;width:0;height:0">
@@ -1554,8 +1607,8 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
         <span id="scene-bg-knob" style="position:absolute;content:\'\';height:12px;width:12px;left:3px;top:3px;background:var(--txd);border-radius:50%;transition:.2s"></span>
       </label>
       <div>
-        <div style="font-size:11px;color:var(--txm)">배경 전용 모드</div>
-        <div style="font-size:9px;color:var(--txd);margin-top:1px">활성화 시 <code style="font-size:8.5px;color:var(--p2)">NO PEOPLE, NO CHARACTERS, NO HUMANS, EMPTY SCENE</code> 자동 추가</div>
+        <div style="font-size:13px;color:var(--txm)">배경 전용 모드</div>
+        <div style="font-size:12px;color:var(--txd);margin-top:1px">활성화 시 <code style="font-size:12px;color:var(--p2)">NO PEOPLE, NO CHARACTERS, NO HUMANS, EMPTY SCENE</code> 자동 추가</div>
       </div>
     </div>
   </div>
@@ -1576,7 +1629,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 크리쳐 아키타입 -->
     <div class="section">
-      <div class="sec-label">▸ 크리쳐 아키타입</div>
+      <div class="sec-label">▸ 🐲 크리쳐 아키타입</div>
       <div class="outfit-arch-grid" id="creature-arch-grid">
         <div class="oarch-card" data-ctype="MECHANICAL MECH, HEAVILY ARMORED ROBOT CREATURE">
           <div class="oarch-name">메카닉</div>
@@ -1607,8 +1660,8 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 해부학적 참조 + 체형 -->
     <div class="section">
-      <div class="sec-label">▸ 체형 &amp; 해부학적 참조</div>
-      <div class="opart-sublabel">해부학적 참조 타입 <span style="font-size:8.5px;color:var(--txd);text-transform:none">— 실존 생물 구조 참조 (AI 인식률↑)</span></div>
+      <div class="sec-label">▸ 🦴 체형 &amp; 해부학적 참조</div>
+      <div class="opart-sublabel">해부학적 참조 타입 <span style="font-size:12px;color:var(--txd);text-transform:none">— 실존 생물 구조 참조 (AI 인식률↑)</span></div>
       <div class="opart-row" id="creature-body-chips">
         <span class="odetail" data-value="ARACHNID-LIKE BODY STRUCTURE, SPIDER OR SCORPION ANATOMY">거미형 (Arachnid)</span>
         <span class="odetail" data-value="INSECTOID BODY STRUCTURE, SEGMENTED EXOSKELETON ANATOMY">곤충형 (Insectoid)</span>
@@ -1632,7 +1685,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 표면 소재 — 믹싱 지원 -->
     <div class="section">
-      <div class="sec-label">▸ 표면 소재 <span style="font-size:9px;color:var(--txd);text-transform:none;letter-spacing:0">— 복수 선택 시 자동으로 "MIXING X AND Y" 형식 적용</span></div>
+      <div class="sec-label">▸ 🪬 표면 소재 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— 복수 선택 시 자동으로 "MIXING X AND Y" 형식 적용</span></div>
       <div class="opart-row" id="creature-material-chips">
         <span class="odetail" data-value="HARDENED SHELL CARAPACE">단단한 카라파스</span>
         <span class="odetail" data-value="WET ORGANIC TISSUE, GLISTENING">젖은 유기 조직</span>
@@ -1651,7 +1704,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 특수 기관 -->
     <div class="section">
-      <div class="sec-label">▸ 특수 기관 &amp; 발광 디테일</div>
+      <div class="sec-label">▸ ⚡ 특수 기관 &amp; 발광 디테일</div>
       <div class="opart-row" id="creature-feature-chips">
         <span class="odetail" data-value="GLOWING MOLTEN CORE VISIBLE AT THE CHEST">흉부 발광 코어</span>
         <span class="odetail" data-value="MASSIVE WINGS, WINGSPAN SPREAD WIDE">날개 (대형)</span>
@@ -1668,7 +1721,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 자세 & 카메라 방향 -->
     <div class="section">
-      <div class="sec-label">▸ 자세 &amp; 방향</div>
+      <div class="sec-label">▸ 🎯 자세 &amp; 방향</div>
       <div class="opart-sublabel">스탠스 / 자세</div>
       <div class="opart-row" id="creature-behavior-chips">
         <span class="odetail" data-value="LOW CROUCHING STANCE, COILED TO STRIKE">낮은 크라우치</span>
@@ -1690,7 +1743,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 추가 묘사 -->
     <div class="section">
-      <div class="sec-label">▸ 추가 묘사</div>
+      <div class="sec-label">▸ ✏️ 추가 묘사</div>
       <div class="field">
         <textarea id="creature-desc" placeholder="예: 등에 파이프 오르간처럼 솟은 배기관, 왼쪽 눈이 적외선 스캐너로 대체됨, 몸통에 고대 문자 각인" style="min-height:52px"></textarea>
       </div>
@@ -1698,7 +1751,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
     <!-- 샷 사이즈 -->
     <div class="section">
-      <div class="sec-label">▸ 샷 사이즈</div>
+      <div class="sec-label">▸ 📷 샷 사이즈</div>
       <div class="frame-row" id="creature-framing-grid">
         <div class="fcard" data-value="MEDIUM CLOSE-UP (MCU), HEAD AND TORSO FRAME,">
           <svg viewBox="0 0 34 58">
@@ -1759,7 +1812,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
             <path class="bf" d="M20,33 L21,37 L23,37 L22,32"/>
             <path class="bf" d="M22,30 Q25,28 26,25 Q24,23 23,26 Q22,28 22,30Z"/>
             <!-- 환경 스케일 표시 -->
-            <text style="font-size:4px;fill:var(--txd);font-family:var(--fm)" x="2" y="53">SCALE</text>
+            <text style="font-size:12px;fill:var(--txd);font-family:var(--fm)" x="2" y="53">SCALE</text>
           </svg>
           <span class="fcard-label">와이드</span><span class="fcard-sub">환경·스케일</span>
         </div>
@@ -1790,16 +1843,16 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
   <!-- ① 씬 스타일 선언 -->
   <div class="section">
-    <div class="sec-label">▸ 씬 스타일 선언</div>
+    <div class="sec-label">▸ 🎬 씬 스타일 선언 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— 액션 연출 전용 · Phase 2 씬과 독립적</span></div>
     <div class="opart-sublabel">퀄리티 / 렌더 스타일</div>
     <div class="opart-row" id="action-quality-chips">
-      <span class="odetail active" data-value="A HIGH-FIDELITY CGI, CINEMATIC ACTION-MOVIE STYLE">하이파이 CGI</span>
-      <span class="odetail" data-value="A GRITTY PHOTOREALISTIC LIVE-ACTION STYLE">그리티 실사</span>
-      <span class="odetail" data-value="A HYPER-REALISTIC, ULTRA-DETAILED CGI RENDER STYLE">하이퍼리얼 CGI</span>
-      <span class="odetail" data-value="A GAME ENGINE RENDERED STYLE, UNREAL ENGINE 5, LUMEN LIGHTING">게임 엔진 렌더 (UE5)</span>
-      <span class="odetail" data-value="A STYLIZED 3D ANIMATION STYLE, SOFT AMBIENT OCCLUSION, CLEAN MATTE SHADING, CASUAL GAME ART STYLE, SMOOTH ROUNDED FORMS">캐주얼 3D 스타일</span>
-      <span class="odetail" data-value="A PIXAR-STYLE 3D ANIMATION, EXPRESSIVE CHARACTER RENDERING, VIBRANT COLORS, SOFT SUBSURFACE SCATTERING">픽사 스타일 3D</span>
-      <span class="odetail" data-value="A STYLIZED ANIME-INFLUENCED 3D RENDER, TOON SHADING, CLEAN OUTLINES, HIGH CONTRAST CELL SHADING">애니 셀 쉐이딩 3D</span>
+      <span class="odetail active" data-value="A HIGH-FIDELITY CGI, CINEMATIC ACTION-MOVIE STYLE">영화 CGI</span>
+      <span class="odetail" data-value="A GRITTY PHOTOREALISTIC LIVE-ACTION STYLE">거친 실사</span>
+      <span class="odetail" data-value="A HYPER-REALISTIC, ULTRA-DETAILED CGI RENDER STYLE">극사실 CGI</span>
+      <span class="odetail" data-value="A GAME ENGINE RENDERED STYLE, UNREAL ENGINE 5, LUMEN LIGHTING">게임 엔진 (UE5)</span>
+      <span class="odetail" data-value="A STYLIZED 3D ANIMATION STYLE, SOFT AMBIENT OCCLUSION, CLEAN MATTE SHADING, CASUAL GAME ART STYLE, SMOOTH ROUNDED FORMS">캐주얼 3D</span>
+      <span class="odetail" data-value="A PIXAR-STYLE 3D ANIMATION, EXPRESSIVE CHARACTER RENDERING, VIBRANT COLORS, SOFT SUBSURFACE SCATTERING">픽사 3D</span>
+      <span class="odetail" data-value="A STYLIZED ANIME-INFLUENCED 3D RENDER, TOON SHADING, CLEAN OUTLINES, HIGH CONTRAST CELL SHADING">애니 3D</span>
     </div>
     <div class="opart-sublabel" style="margin-top:8px">장르 &amp; 톤</div>
     <div class="opart-row" id="action-genre-chips">
@@ -1812,61 +1865,99 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
     </div>
   </div>
 
-  <!-- ② 에셋 등록 (프롬프트에 직접 미포함 — 샷에서 선택용) -->
+  <!-- ② 에셋 등록 -->
   <div class="section">
-    <div class="sec-label">▸ 에셋 등록 <span style="font-size:9px;color:var(--txd);text-transform:none;letter-spacing:0">— Seedance에 등록한 이름을 입력. 각 Shot에서 선택됩니다.</span></div>
+    <div class="sec-label">▸ 📂 에셋 등록 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— 이름 + 이미지 등록 → Shot 선택 &amp; AI 디렉터에 자동 활용</span></div>
 
-    <div class="field-row" style="margin-bottom:6px">
-      <div class="field"><label style="font-size:9.5px;color:var(--p3)">● 캐릭터</label>
-        <div id="reg-char-list" style="display:flex;flex-direction:column;gap:4px">
-          <div class="reg-row" style="display:flex;gap:6px" id="reg-char-row-1">
-            <input type="text" class="reg-char-input" oninput="refreshShotDropdowns()" placeholder="@ZERO" style="flex:1;font-size:11px">
-            <button onclick="removeRegRow('reg-char-row-1')" style="font-family:var(--fm);font-size:8px;padding:2px 7px;border-radius:3px;border:.5px solid rgba(229,115,115,.3);background:transparent;color:rgba(229,115,115,.6);cursor:pointer;flex-shrink:0">✕</button>
-          </div>
-        </div>
-        <button onclick="addRegChar()" style="margin-top:5px;font-family:var(--fm);font-size:9px;padding:2px 10px;border-radius:4px;border:.5px solid var(--p3b);background:var(--p3d);color:var(--p3);cursor:pointer;width:100%">+ 캐릭터 추가</button>
-      </div>
-      <div class="field">
-        <label style="font-size:9.5px;color:var(--p2)">● 씬 / 메카</label>
-        <div id="reg-asset-list" style="display:flex;flex-direction:column;gap:4px">
-          <div class="reg-row" style="display:flex;gap:6px" id="reg-asset-row-1">
-            <input type="text" class="reg-asset-input" oninput="refreshShotDropdowns()" placeholder="@CITY" style="flex:1;font-size:11px">
-            <button onclick="removeRegRow('reg-asset-row-1')" style="font-family:var(--fm);font-size:8px;padding:2px 7px;border-radius:3px;border:.5px solid rgba(229,115,115,.3);background:transparent;color:rgba(229,115,115,.6);cursor:pointer;flex-shrink:0">✕</button>
-          </div>
-        </div>
-        <button onclick="addRegAsset()" style="margin-top:5px;font-family:var(--fm);font-size:9px;padding:2px 10px;border-radius:4px;border:.5px solid var(--p2b);background:var(--p2d);color:var(--p2);cursor:pointer;width:100%">+ 씬/메카 추가</button>
-      </div>
+    <!-- 캐릭터 -->
+    <div style="margin-bottom:10px">
+      <div style="font-family:var(--fm);font-size:12px;color:var(--p3);letter-spacing:.06em;margin-bottom:5px">● 캐릭터</div>
+      <div id="reg-char-list" style="display:flex;flex-direction:column;gap:6px"></div>
+      <button onclick="addRegChar()" style="margin-top:5px;font-family:var(--fm);font-size:12px;padding:3px 10px;border-radius:4px;border:.5px solid var(--p3b);background:var(--p3d);color:var(--p3);cursor:pointer;width:100%">+ 캐릭터 추가</button>
     </div>
-    <div class="field-row">
-      <div class="field"><label style="font-size:9.5px;color:var(--ac)">● 크리쳐</label>
-        <div id="reg-creature-list" style="display:flex;flex-direction:column;gap:4px">
-          <div class="reg-row" style="display:flex;gap:6px" id="reg-creature-row-1">
-            <input type="text" class="reg-creature-input" oninput="refreshShotDropdowns()" placeholder="@MONSTER" style="flex:1;font-size:11px">
-            <button onclick="removeRegRow('reg-creature-row-1')" style="font-family:var(--fm);font-size:8px;padding:2px 7px;border-radius:3px;border:.5px solid rgba(229,115,115,.3);background:transparent;color:rgba(229,115,115,.6);cursor:pointer;flex-shrink:0">✕</button>
-          </div>
-        </div>
-        <button onclick="addRegCreature()" style="margin-top:5px;font-family:var(--fm);font-size:9px;padding:2px 10px;border-radius:4px;border:.5px solid rgba(200,169,110,.4);background:var(--acd);color:var(--ac);cursor:pointer;width:100%">+ 크리쳐 추가</button>
-      </div>
-      <div class="field" style="display:flex;align-items:flex-end;padding-bottom:2px">
-        <div style="width:100%;padding:8px 10px;background:var(--sf2);border:.5px solid rgba(255,255,255,.07);border-radius:7px">
-          <div style="font-family:var(--fm);font-size:8.5px;color:var(--txd);margin-bottom:4px;letter-spacing:.06em">등록된 에셋 → 각 Shot 카드에서 선택</div>
-          <div style="font-family:var(--fm);font-size:9px;color:var(--p3)">📌 이 섹션의 값은 프롬프트에 직접 포함되지 않습니다</div>
-        </div>
-      </div>
+
+    <!-- 씬 -->
+    <div style="margin-bottom:10px">
+      <div style="font-family:var(--fm);font-size:12px;color:var(--p2);letter-spacing:.06em;margin-bottom:5px">● 씬 / 배경</div>
+      <div id="reg-asset-list" style="display:flex;flex-direction:column;gap:6px"></div>
+      <button onclick="addRegAsset()" style="margin-top:5px;font-family:var(--fm);font-size:12px;padding:3px 10px;border-radius:4px;border:.5px solid var(--p2b);background:var(--p2d);color:var(--p2);cursor:pointer;width:100%">+ 씬 추가</button>
     </div>
+
+    <!-- 오브젝트 -->
+    <div style="margin-bottom:10px">
+      <div style="font-family:var(--fm);font-size:12px;color:#9ab8cc;letter-spacing:.06em;margin-bottom:5px">● 오브젝트</div>
+      <div id="reg-object-list" style="display:flex;flex-direction:column;gap:6px"></div>
+      <button onclick="addRegObject()" style="margin-top:5px;font-family:var(--fm);font-size:12px;padding:3px 10px;border-radius:4px;border:.5px solid rgba(154,184,204,.3);background:rgba(154,184,204,.08);color:#9ab8cc;cursor:pointer;width:100%">+ 오브젝트 추가</button>
+    </div>
+
+    <!-- 크리쳐 -->
+    <div>
+      <div style="font-family:var(--fm);font-size:12px;color:var(--ac);letter-spacing:.06em;margin-bottom:5px">● 크리쳐</div>
+      <div id="reg-creature-list" style="display:flex;flex-direction:column;gap:6px"></div>
+      <button onclick="addRegCreature()" style="margin-top:5px;font-family:var(--fm);font-size:12px;padding:3px 10px;border-radius:4px;border:.5px solid rgba(200,169,110,.4);background:var(--acd);color:var(--ac);cursor:pointer;width:100%">+ 크리쳐 추가</button>
+    </div>
+
+    <div style="margin-top:8px;padding:6px 10px;background:var(--sf2);border:.5px solid rgba(255,255,255,.07);border-radius:6px;font-family:var(--fm);font-size:12px;color:var(--txd)">
+      📌 등록한 이름은 각 Shot 카드에서 선택 / 이미지는 AI 디렉터가 자동 참조합니다
+    </div>
+  </div>
+
+  <!-- ③-AI AI 디렉터 -->
+  <div class="section" id="ai-director-section">
+    <div style="background:rgba(200,169,110,.07);border:.5px solid rgba(200,169,110,.4);border-radius:12px;padding:16px 18px;position:relative;overflow:hidden">
+      <div style="position:absolute;top:0;left:0;right:0;height:2.5px;background:linear-gradient(90deg,var(--ac),rgba(200,169,110,.2));border-radius:12px 12px 0 0"></div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <span style="font-size:20px">🤖</span>
+        <div>
+          <div style="font-family:var(--fb);font-size:14px;color:var(--ac);font-weight:500;letter-spacing:.01em">AI 디렉터</div>
+          <div style="font-family:var(--fm);font-size:12px;color:var(--txd);margin-top:2px">이미지 + 방향성 입력 → Shot 시퀀스 자동 생성</div>
+        </div>
+      </div>
+    <div id="ai-director-body" style="display:block">
+
+      <!-- 등록된 에셋 미리보기 -->
+      <div id="aid-asset-preview-bar" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;min-height:20px">
+        <span style="font-family:var(--fm);font-size:12px;color:var(--txd)" id="aid-no-assets">에셋 등록 섹션에서 이미지를 먼저 등록하세요</span>
+      </div>
+
+      <!-- 방향성 입력 -->
+      <div class="field" style="margin-bottom:8px">
+        <label>방향성 입력 <span style="font-size:12px;color:var(--txd);font-weight:300">— 러프하게 써도 됩니다</span></label>
+        <textarea id="aid-direction" placeholder="방향성 예시: 코크핏에서 담배를 피우며 조이스틱을 잡는 장면. 강렬하고 반항적인 느낌. 슬로모로 마무리.&#10;예: 메카가 도시를 가로지르며 크리쳐와 충돌. 폭발적인 오프닝, 시그니처 임팩트 샷 포함." style="min-height:64px"></textarea>
+      </div>
+
+      <!-- 샷 수 선택 -->
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <label style="font-family:var(--fm);font-size:12px;color:var(--txm)">생성할 Shot 수</label>
+        <div style="display:flex;gap:4px" id="aid-shot-count-chips">
+          <div class="asc active" data-count="2" style="font-family:var(--fm);font-size:12px;padding:3px 10px;border-radius:4px;background:var(--p3d);border:.5px solid var(--p3b);color:var(--p3);cursor:pointer">2</div>
+          <div class="asc" data-count="3" style="font-family:var(--fm);font-size:12px;padding:3px 10px;border-radius:4px;background:var(--sf2);border:.5px solid var(--bd);color:var(--txm);cursor:pointer">3</div>
+          <div class="asc" data-count="4" style="font-family:var(--fm);font-size:12px;padding:3px 10px;border-radius:4px;background:var(--sf2);border:.5px solid var(--bd);color:var(--txm);cursor:pointer">4</div>
+        </div>
+      </div>
+
+      <!-- 생성 버튼 -->
+      <button id="aid-generate-btn" onclick="runAIDirector()" style="width:100%;font-family:var(--fb);font-size:13px;padding:10px;border-radius:7px;border:.5px solid rgba(200,169,110,.5);background:rgba(200,169,110,.12);color:var(--ac);cursor:pointer;transition:all .15s">
+        🤖 AI 디렉터 실행 → Shot 시퀀스 생성
+      </button>
+      <div id="aid-loading" style="display:none;text-align:center;padding:10px;font-family:var(--fm);font-size:12px;color:var(--txd)">분석 중...</div>
+      <div id="aid-error" style="display:none;margin-top:6px;padding:7px 10px;background:rgba(229,115,115,.08);border:.5px solid rgba(229,115,115,.25);border-radius:6px;font-family:var(--fm);font-size:12px;color:#e57373"></div>
+
+    </div>
+    </div><!-- /ai-director-box -->
   </div>
 
   <!-- ③ Shot 시퀀스 빌더 -->
   <div class="section">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-      <div class="sec-label" style="margin:0">▸ Shot 시퀀스 빌더</div>
-      <button id="add-shot-btn" onclick="addShot()" style="font-family:var(--fm);font-size:10px;padding:4px 12px;border-radius:5px;border:.5px solid var(--p3b);background:var(--p3d);color:var(--p3);cursor:pointer;transition:all .15s">+ Shot 추가</button>
+      <div class="sec-label" style="margin:0">▸ 🎬 Shot 시퀀스 빌더</div>
+      <button id="add-shot-btn" onclick="addShot()" style="font-family:var(--fm);font-size:12px;padding:4px 12px;border-radius:5px;border:.5px solid var(--p3b);background:var(--p3d);color:var(--p3);cursor:pointer;transition:all .15s">+ Shot 추가</button>
     </div>
     <div id="shot-sequence-container">
       <!-- Shot 1 기본 표시 -->
       <div class="shot-card" id="shot-card-1">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-          <span style="font-family:var(--fm);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--p3)">Shot 1</span>
+          <span style="font-family:var(--fm);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--p3)">Shot 1</span>
         </div>
         <div class="field-row">
           <div class="field"><label>카메라 무브</label>
@@ -1933,47 +2024,68 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
           </div>
         </div>
         <div class="field-row" style="margin-top:6px">
-          <div class="field"><label style="font-size:9px;color:var(--p3)">캐릭터 선택</label>
-            <select class="shot-char" onchange="generate()" style="font-size:11px">
-              <option value="">— 선택 —</option>
+          <div class="field"><label style="font-size:12px;color:var(--p3)">캐릭터</label>
+            <select class="shot-char" onchange="generate()" style="font-size:13px">
+              <option value="">— 캐릭터 —</option>
             </select>
           </div>
-          <div class="field"><label style="font-size:9px;color:var(--p2)">씬 / 메카</label>
-            <select class="shot-asset" onchange="generate()" style="font-size:11px">
-              <option value="">— 선택 —</option>
+          <div class="field"><label style="font-size:12px;color:var(--p2)">씬 / 배경</label>
+            <select class="shot-asset" onchange="generate()" style="font-size:13px">
+              <option value="">— 씬 —</option>
             </select>
           </div>
-          <div class="field"><label style="font-size:9px;color:var(--ac)">크리쳐</label>
-            <select class="shot-creature" onchange="generate()" style="font-size:11px">
-              <option value="">— 선택 —</option>
+        </div>
+        <div class="field-row" style="margin-top:4px">
+          <div class="field"><label style="font-size:12px;color:#9ab8cc">오브젝트</label>
+            <select class="shot-object" onchange="generate()" style="font-size:13px">
+              <option value="">— 오브젝트 —</option>
+            </select>
+          </div>
+          <div class="field"><label style="font-size:12px;color:var(--ac)">크리쳐</label>
+            <select class="shot-creature" onchange="generate()" style="font-size:13px">
+              <option value="">— 크리쳐 —</option>
             </select>
           </div>
         </div>
         <div class="field" style="margin-top:4px">
-          <textarea class="shot-desc" oninput="generate()" placeholder="Shot 1 묘사 — 피사체·환경·분위기&#10;예: 도심 폐허 속 메카. 먼지와 파편이 분출. 강렬한 직사광." style="min-height:44px"></textarea>
+          <textarea class="shot-desc" oninput="generate()" placeholder="Shot 1 묘사 — 영문으로 작성 (AI 디렉터 사용 시 영문+한글 설명 자동 입력)&#10;예: The mech stands amid urban ruins. Dust erupts violently. Harsh direct sunlight." style="min-height:44px"></textarea>
         </div>
         <div class="field" style="margin-top:4px">
-          <input type="text" class="shot-dialogue" oninput="generate()" placeholder='대사 (선택) — 예: "Spotted her. Sending a mark"' style="font-size:11px">
+          <input type="text" class="shot-dialogue" oninput="generate()" placeholder='대사 (선택) — 예: "Spotted her. Sending a mark"' style="font-size:13px">
+        </div>
+        <!-- 이펙트 밀도 & 시그니처 -->
+        <div style="display:flex;align-items:center;gap:6px;margin-top:6px;flex-wrap:wrap">
+          <span style="font-family:var(--fm);font-size:12px;color:var(--txd)">이펙트 밀도</span>
+          <div class="shot-density-chips" style="display:flex;gap:4px">
+            <div class="sdc active" data-value="" style="font-family:var(--fm);font-size:12px;padding:2px 8px;border-radius:4px;background:var(--sf2);border:.5px solid var(--bd);color:var(--txd);cursor:pointer;transition:all .15s ease">없음</div>
+            <div class="sdc" data-value="LOW DENSITY" style="font-family:var(--fm);font-size:12px;padding:2px 8px;border-radius:4px;background:var(--sf2);border:.5px solid var(--bd);color:var(--txd);cursor:pointer;transition:all .15s ease">LOW</div>
+            <div class="sdc" data-value="MEDIUM DENSITY" style="font-family:var(--fm);font-size:12px;padding:2px 8px;border-radius:4px;background:var(--sf2);border:.5px solid var(--bd);color:var(--txd);cursor:pointer;transition:all .15s ease">MEDIUM</div>
+            <div class="sdc" data-value="HIGH DENSITY" style="font-family:var(--fm);font-size:12px;padding:2px 8px;border-radius:4px;background:var(--sf2);border:.5px solid var(--bd);color:var(--txd);cursor:pointer;transition:all .15s ease">HIGH</div>
+          </div>
+          <label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-left:6px">
+            <input type="checkbox" class="shot-signature" onchange="generate()" style="accent-color:var(--ac);width:12px;height:12px">
+            <span style="font-family:var(--fm);font-size:12px;color:var(--ac)">⭐ 시그니처 샷</span>
+          </label>
         </div>
         <!-- 물리 반응 토글 -->
-        <button class="shot-phys-toggle" onclick="toggleShotPhys(this)" style="margin-top:6px;width:100%;font-family:var(--fm);font-size:9px;padding:4px;border-radius:5px;border:.5px solid var(--bd);background:transparent;color:var(--txd);cursor:pointer;text-align:left;transition:all .15s">▸ 물리 반응 추가</button>
+        <button class="shot-phys-toggle" onclick="toggleShotPhys(this)" style="margin-top:6px;width:100%;font-family:var(--fm);font-size:12px;padding:4px;border-radius:5px;border:.5px solid var(--bd);background:transparent;color:var(--txd);cursor:pointer;text-align:left;transition:all .15s">▸ 물리 반응 추가</button>
         <div class="shot-phys-panel" style="display:none;margin-top:6px;padding:8px;background:var(--bg);border-radius:6px;border:.5px solid var(--bd)">
-          <div style="font-family:var(--fm);font-size:8.5px;color:var(--txd);margin-bottom:6px">힘의 전달</div>
+          <div style="font-family:var(--fm);font-size:12px;color:var(--txd);margin-bottom:6px">힘의 전달</div>
           <div class="shot-force-chips" style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:8px">
-            <div class="spc" data-value="" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm);text-align:center">없음</div>
-            <div class="spc" data-value="kinetic chain reaction — ground force through lower kinetic chain, terminal release through upper extremities" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">지면 → 팔 폭발</div>
-            <div class="spc" data-value="rotational momentum — hip pivot as axis, spinal torque transfer, shoulder-led angular velocity" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">골반 피벗 회전</div>
-            <div class="spc" data-value="gravitational load — body yields, trailing limb inertia, joint impact absorption on landing" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">중력 낙하 착지</div>
-            <div class="spc" data-value="compression-release cycle — eccentric contraction loading, spring-force concentric release" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">압축 → 반발</div>
-            <div class="spc" data-value="off-axis external impact — lateral center-of-mass shift, secondary ripple from contact point" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">외부 충격 반작용</div>
+            <div class="spc" data-value="" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm);text-align:center">없음</div>
+            <div class="spc" data-value="kinetic chain reaction — ground force through lower kinetic chain, terminal release through upper extremities" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">지면 → 팔 폭발</div>
+            <div class="spc" data-value="rotational momentum — hip pivot as axis, spinal torque transfer, shoulder-led angular velocity" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">골반 피벗 회전</div>
+            <div class="spc" data-value="gravitational load — body yields, trailing limb inertia, joint impact absorption on landing" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">중력 낙하 착지</div>
+            <div class="spc" data-value="compression-release cycle — eccentric contraction loading, spring-force concentric release" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">압축 → 반발</div>
+            <div class="spc" data-value="off-axis external impact — lateral center-of-mass shift, secondary ripple from contact point" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">외부 충격 반작용</div>
           </div>
-          <div style="font-family:var(--fm);font-size:8.5px;color:var(--txd);margin-bottom:6px">연쇄 반응</div>
+          <div style="font-family:var(--fm);font-size:12px;color:var(--txd);margin-bottom:6px">연쇄 반응</div>
           <div class="shot-react-chips" style="display:grid;grid-template-columns:1fr 1fr;gap:4px">
-            <div class="spc" data-value="" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm);text-align:center">없음</div>
-            <div class="spc" data-value="hair dramatically blown back, fabric trails with aerodynamic drag and tension" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">헤어 반동 + 드래그</div>
-            <div class="spc" data-value="garment billowing outward during deceleration, gravitational collapse on stop" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">옷감 부풀기 → 낙하</div>
-            <div class="spc" data-value="follow-through oscillation in fingers, earrings, loose fabric after halt" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">잔진동 — 손끝·귀걸이</div>
-            <div class="spc" data-value="ground-reaction shockwave propagates from plantar contact upward through skeletal column" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">지면 충격파 발→머리</div>
+            <div class="spc" data-value="" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm);text-align:center">없음</div>
+            <div class="spc" data-value="hair dramatically blown back, fabric trails with aerodynamic drag and tension" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">헤어 반동 + 드래그</div>
+            <div class="spc" data-value="garment billowing outward during deceleration, gravitational collapse on stop" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">옷감 부풀기 → 낙하</div>
+            <div class="spc" data-value="follow-through oscillation in fingers, earrings, loose fabric after halt" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">잔진동 — 손끝·귀걸이</div>
+            <div class="spc" data-value="ground-reaction shockwave propagates from plantar contact upward through skeletal column" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">지면 충격파 발→머리</div>
           </div>
         </div>
       </div>
@@ -1982,7 +2094,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
   <!-- ④ 추가 액션 묘사 -->
   <div class="section">
-    <div class="sec-label">▸ 추가 액션 묘사 <span style="font-size:9px;color:var(--txd);text-transform:none;letter-spacing:0">— Shot 카드로 표현되지 않는 물리·상황 묘사</span></div>
+    <div class="sec-label">▸ ✍️ 추가 액션 묘사 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— Shot 카드로 표현되지 않는 물리·상황 묘사</span></div>
     <div class="field">
       <textarea id="physics-extra" placeholder="예: 대포 발사 반동으로 시트에 몸이 눌림. 손은 조종간을 꽉 쥔 채 흔들리지 않음.&#10;예: 먼지 구름이 천천히 퍼지며 잔해가 낙하. 카메라에 파편이 튀어 오름." style="min-height:56px"></textarea>
     </div>
@@ -1990,7 +2102,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 
   <!-- ⑤ 전체 무드 & 오디오 -->
   <div class="section">
-    <div class="sec-label">▸ 오디오 싱크 <span style="font-size:9px;color:var(--txd);text-transform:none;letter-spacing:0">— 장르·톤은 ① 씬 스타일에서 설정</span></div>
+    <div class="sec-label">▸ 🎵 오디오 싱크 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— 장르·톤은 ① 씬 스타일에서 설정</span></div>
     <div class="field-row">
       <div class="field"><label>BPM / 템포</label>
         <select id="bpm">
@@ -2022,6 +2134,43 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
         </select>
       </div>
     </div>
+    <!-- 에너지 아크 -->
+    <div class="section" style="margin-top:0;padding-top:0;border-top:none">
+      <div class="sec-label" style="margin-top:10px">▸ ⚡ 에너지 아크 <span style="font-size:12px;color:var(--txd);text-transform:none;letter-spacing:0">— 3막 구조로 영상 에너지 흐름 설계</span></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:6px">
+        <div>
+          <div style="font-family:var(--fm);font-size:12px;color:var(--txd);margin-bottom:4px;letter-spacing:.06em">ACT 1 — 오프닝</div>
+          <select id="arc-act1" onchange="generate()" style="width:100%;font-size:12px">
+            <option value="">— 선택 —</option>
+            <option value="EXPLOSIVE OPENING, maximum intensity, high-density effects">폭발적 — 최고 강도</option>
+            <option value="SLOW BUILD OPENING, low to medium energy, atmospheric">슬로우 빌드</option>
+            <option value="STATIC HOLD, single establishing shot, tension building">스태틱 홀드 — 긴장 구축</option>
+            <option value="DISORIENTING ENTRY, dutch angle, motion blur, thrown into action">디조리엔팅 — 혼돈 진입</option>
+          </select>
+        </div>
+        <div>
+          <div style="font-family:var(--fm);font-size:12px;color:var(--txd);margin-bottom:4px;letter-spacing:.06em">ACT 2 — 전개</div>
+          <select id="arc-act2" onchange="generate()" style="width:100%;font-size:12px">
+            <option value="">— 선택 —</option>
+            <option value="CONTROLLED INTENSITY, signature effects placement, deliberate pacing">시그니처 이펙트 배치</option>
+            <option value="HIGH-FREQUENCY INTERCUT, rapid cuts between multiple subjects">고속 인터컷</option>
+            <option value="CONTRAST RHYTHM, alternating slow and fast moments">대비 리듬 — 슬로↔패스트</option>
+            <option value="SUSTAINED CLIMAX, effects stacking, energy peaks here">클라이맥스 지속</option>
+          </select>
+        </div>
+        <div>
+          <div style="font-family:var(--fm);font-size:12px;color:var(--txd);margin-bottom:4px;letter-spacing:.06em">ACT 3 — 해소</div>
+          <select id="arc-act3" onchange="generate()" style="width:100%;font-size:12px">
+            <option value="">— 선택 —</option>
+            <option value="EFFECTS WITHDRAW, stillness takes over, clean resolution">이펙트 철수 — 정적 해소</option>
+            <option value="DRAMATIC FREEZE, final frame holds, slow fade out">드라마틱 프리즈</option>
+            <option value="SLOW-MOTION RESOLUTION, final action in deep slow-mo">슬로모 마무리</option>
+            <option value="BRAND CARD TRANSITION, clean cut to logo or title card">브랜드 카드 전환</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
     <!-- 군무 모드 토글 -->
     <div style="display:flex;align-items:center;gap:10px;padding:8px 11px;background:var(--sf2);border:.5px solid rgba(255,255,255,.1);border-radius:6px;margin-top:6px;cursor:pointer" onclick="toggleChoreoMode()" id="choreo-toggle-row">
       <label style="position:relative;display:inline-block;width:34px;height:18px;flex-shrink:0;cursor:pointer">
@@ -2029,8 +2178,8 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
         <span id="choreo-toggle-knob" style="position:absolute;height:12px;width:12px;left:3px;top:3px;background:var(--txd);border-radius:50%;transition:.2s"></span>
       </label>
       <div>
-        <div style="font-size:11px;color:var(--txm)">군무 모드</div>
-        <div style="font-size:9px;color:var(--txd);margin-top:1px">활성화 시 스테이지·동선·조명·마감 태그 표시</div>
+        <div style="font-size:13px;color:var(--txm)">💃 군무 모드</div>
+        <div style="font-size:12px;color:var(--txd);margin-top:1px">활성화 시 스테이지·동선·조명·마감 태그 표시</div>
       </div>
     </div>
     <div id="choreo-expand" style="display:none">
@@ -2072,6 +2221,25 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
       <span class="odetail" data-value="sci-fi cyberpunk aesthetic, colored neon spill on performers, edgy powerful mysterious mood">사이버펑크 네온 스필</span>
     </div>
 
+    <div class="opart-sublabel" style="margin-top:10px">BPM &amp; 비트 히트</div>
+    <div class="field-row" style="margin-bottom:8px">
+      <div class="field"><label style="font-size:12px">BPM / 템포</label>
+        <select id="bpm">
+          <option value="slow 60–80 BPM — Andante, languid weighted movement">60–80 BPM — 안단테</option>
+          <option value="mid 90–110 BPM — Moderato, walking-pace flow">90–110 BPM — 모데라토</option>
+          <option value="upbeat 120–130 BPM — Allegro, sharp body isolations on beat">120–130 BPM — 알레그로</option>
+          <option value="fast 140–160 BPM — Vivace, staccato percussive movement">140–160 BPM — 비바체</option>
+        </select>
+      </div>
+      <div class="field"><label style="font-size:12px">비트 히트</label>
+        <select id="beat-hit">
+          <option value="body isolations snap on the downbeat — head, chest, hips hit separately">다운비트 아이솔레이션</option>
+          <option value="tension builds toward beat drop — kinetic energy explodes on the 1">빌드업 → 드롭</option>
+          <option value="camera cut synced to every 4th beat">4박자 카메라 컷</option>
+          <option value="continuous fluid motion, beats trigger subtle accent">플루이드 + 악센트</option>
+        </select>
+      </div>
+    </div>
     <div class="opart-sublabel" style="margin-top:8px">마감 스타일 태그</div>
     <div class="opart-row" id="choreo-finish-chips">
       <span class="odetail" data-value="HIGH-PRODUCTION K-POP MUSIC VIDEO STYLE, STUNNING 4K">하이프로덕션 K-POP MV · 4K</span>
@@ -2108,8 +2276,19 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 </main>
 
 <footer>
-  <span>Higgsfield 기반 AI 시네마틱 디렉팅</span>
-  <span>Soul Cinema · Nano Banana Pro · Seedance 2.0</span>
+  <div style="display:flex;flex-direction:column;gap:3px">
+    <span>© 2026 Seohyung Yu. All rights reserved.</span>
+    <span style="font-family:var(--fm);font-size:12px;color:var(--txd);letter-spacing:.06em">3D Motion Designer | AI-driven workflow</span>
+  </div>
+  <a href="https://linktr.ee/yooysh11" target="_blank" rel="noopener"
+     style="font-family:var(--fm);font-size:12px;color:var(--txd);text-decoration:none;
+            display:inline-flex;align-items:center;gap:6px;
+            padding:4px 12px;border:.5px solid var(--bd);border-radius:20px;
+            transition:all .15s ease"
+     onmouseover="this.style.borderColor='var(--ac)';this.style.color='var(--ac)'"
+     onmouseout="this.style.borderColor='var(--bd)';this.style.color='var(--txd)'">
+    🌿 linktr.ee/yooysh11
+  </a>
 </footer>
 
 <script>
@@ -2117,7 +2296,7 @@ footer span{font-family:var(--fm);font-size:9px;color:var(--txd);letter-spacing:
 let cp=1, cs='ref';
 const PC={1:'var(--p1)',2:'var(--p2)',3:'var(--p3)'};
 const PL={1:'Phase 1 — 캐릭터 에셋',2:'Phase 2 — 세계관 구축',3:'Phase 3 — 액션 연출'};
-const st={outfit:'minimal casual outfit, clean structured lines',anchors:[],actionQuality:'A HIGH-FIDELITY CGI, CINEMATIC ACTION-MOVIE STYLE',actionGenre:'',choreo:'Canon offset — same movement staggered by 2 beats per performer',kw:[],faceShot:'MEDIUM SHOT (MS), WAIST-UP FRAME,',outfitShot:'FULL SHOT (FS), HEAD-TO-TOE FRAME,',archetype:'',makeup:'NATURAL MINIMAL MAKEUP, CLEAN SKIN FOCUS',makeupIntensity:'SUBTLE APPLICATION, SHEER COVERAGE, BARELY-THERE FINISH',hairTexture:'',hairAcc:[],faceLighting:'STUDIO SOFTBOX DIFFUSION, EVEN FILL LIGHT, FLAT KEY',outfitPalette:'OLIVE KHAKI AND EARTH TONES',force:'kinetic chain reaction — ground force through lower kinetic chain, torso as transfer node, terminal release through upper extremities',sceneSettings:[],sceneDensity:[],sceneQuality:'A HIGHLY CINEMATIC, PHOTOREALISTIC LIVE-ACTION STILL OF A',sceneRenderer:'',sceneScale:[],sceneArch:[],sceneDecay:[],sceneDebris:[],sceneRatio:'',sceneDof:'',sceneBokeh:'',sceneBgOnly:true,creatureType:'',creatureBody:[],creatureSize:[],creatureMaterial:[],creatureFeatures:[],creatureBehavior:[],creatureFacing:[],creatureShot:'FULL BODY SHOT, HEAD TO TOE,',reaction:'hair secondary delay — 2-frame offset from primary action, fabric trailing with aerodynamic drag and tension arc',sheetViews:['FRONT FULL BODY VIEW','BACK FULL BODY VIEW','FACE CLOSE-UP FRONT'],outfitAccChips:[],topType:'',topMaterials:[],topFit:[],topDetails:[],topNeckline:[],topBaseLayer:[],outerType:'',outerVolume:[],outerDetails:[],outerWearing:[],bottomType:'',bottomMaterials:[],bottomFit:[],bottomDetails:[],shoeType:'',styleMoodChips:[],outfitHardware:[]};
+const st={outfit:'minimal casual outfit, clean structured lines',anchors:[],actionQuality:'A HIGH-FIDELITY CGI, CINEMATIC ACTION-MOVIE STYLE',actionGenre:'',choreo:'Canon offset — same movement staggered by 2 beats per performer',kw:[],faceShot:'MEDIUM SHOT (MS), WAIST-UP FRAME,',outfitShot:'FULL SHOT (FS), HEAD-TO-TOE FRAME,',archetype:'',makeup:'NATURAL MINIMAL MAKEUP, CLEAN SKIN FOCUS',makeupIntensity:'SUBTLE APPLICATION, SHEER COVERAGE, BARELY-THERE FINISH',hairTexture:'',hairAcc:[],faceLighting:'STUDIO SOFTBOX DIFFUSION, EVEN FILL LIGHT, FLAT KEY',outfitPalette:'OLIVE KHAKI AND EARTH TONES',sceneSettings:[],sceneDensity:[],sceneQuality:'A HIGHLY CINEMATIC, PHOTOREALISTIC LIVE-ACTION STILL OF A',sceneRenderer:'',sceneScale:[],sceneArch:[],sceneDecay:[],sceneDebris:[],sceneRatio:'',sceneDof:'',sceneBokeh:'',sceneBgOnly:true,creatureType:'',creatureBody:[],creatureSize:[],creatureMaterial:[],creatureFeatures:[],creatureBehavior:[],creatureFacing:[],creatureShot:'FULL BODY SHOT, HEAD TO TOE,',sheetViews:['FRONT FULL BODY VIEW','BACK FULL BODY VIEW','FACE CLOSE-UP FRONT'],outfitAccChips:[],topType:'',topMaterials:[],topFit:[],topDetails:[],topNeckline:[],topBaseLayer:[],outerType:'',outerVolume:[],outerDetails:[],outerWearing:[],bottomType:'',bottomMaterials:[],bottomFit:[],bottomDetails:[],shoeType:'',styleMoodChips:[],outfitHardware:[]};
 
 function v(id){const e=document.getElementById(id);return e?e.value:''}
 
@@ -2458,7 +2637,7 @@ function addShot(){
   const card=document.createElement('div');
   card.className='shot-card'; card.id=`shot-card-${_shotCount}`;
   card.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-    <span style="font-family:var(--fm);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--p3)">Shot ${_shotCount}</span>
+    <span style="font-family:var(--fm);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--p3)">Shot ${_shotCount}</span>
     <button class="shot-remove" onclick="removeShot(${_shotCount})">✕ 제거</button>
   </div>
   <div class="field-row">
@@ -2467,40 +2646,58 @@ function addShot(){
     <div class="field"><label>앵글</label><select class="shot-angle" onchange="generate()">${_ANGLE_OPTS}</select></div>
   </div>
   <div class="field-row" style="margin-top:6px">
-    <div class="field"><label style="font-size:9px;color:var(--p3)">캐릭터 선택</label>
-      <select class="shot-char" onchange="generate()" style="font-size:11px"><option value="">— 선택 —</option></select>
+    <div class="field"><label style="font-size:12px;color:var(--p3)">캐릭터</label>
+      <select class="shot-char" onchange="generate()" style="font-size:13px"><option value="">— 캐릭터 —</option></select>
     </div>
-    <div class="field"><label style="font-size:9px;color:var(--p2)">씬 / 메카</label>
-      <select class="shot-asset" onchange="generate()" style="font-size:11px"><option value="">— 선택 —</option></select>
+    <div class="field"><label style="font-size:12px;color:var(--p2)">씬 / 배경</label>
+      <select class="shot-asset" onchange="generate()" style="font-size:13px"><option value="">— 씬 —</option></select>
     </div>
-    <div class="field"><label style="font-size:9px;color:var(--ac)">크리쳐</label>
-      <select class="shot-creature" onchange="generate()" style="font-size:11px"><option value="">— 선택 —</option></select>
+  </div>
+  <div class="field-row" style="margin-top:4px">
+    <div class="field"><label style="font-size:12px;color:#9ab8cc">오브젝트</label>
+      <select class="shot-object" onchange="generate()" style="font-size:13px"><option value="">— 오브젝트 —</option></select>
+    </div>
+    <div class="field"><label style="font-size:12px;color:var(--ac)">크리쳐</label>
+      <select class="shot-creature" onchange="generate()" style="font-size:13px"><option value="">— 크리쳐 —</option></select>
     </div>
   </div>
   <div class="field" style="margin-top:4px">
     <textarea class="shot-desc" oninput="generate()" placeholder="Shot ${_shotCount} 묘사" style="min-height:44px"></textarea>
   </div>
   <div class="field" style="margin-top:4px">
-    <input type="text" class="shot-dialogue" oninput="generate()" placeholder='대사 (선택)' style="font-size:11px">
+    <input type="text" class="shot-dialogue" oninput="generate()" placeholder='대사 (선택)' style="font-size:13px">
   </div>
-  <button class="shot-phys-toggle" onclick="toggleShotPhys(this)" style="margin-top:6px;width:100%;font-family:var(--fm);font-size:9px;padding:4px;border-radius:5px;border:.5px solid var(--bd);background:transparent;color:var(--txd);cursor:pointer;text-align:left;transition:all .15s">▸ 물리 반응 추가</button>
-  <div class="shot-phys-panel" style="display:none;margin-top:6px;padding:8px;background:var(--bg);border-radius:6px;border:.5px solid var(--bd)">
-    <div style="font-family:var(--fm);font-size:8.5px;color:var(--txd);margin-bottom:6px">힘의 전달</div>
-    <div class="shot-force-chips" style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:8px">
-      <div class="spc" data-value="" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm);text-align:center">없음</div>
-      <div class="spc" data-value="kinetic chain reaction — ground force through lower kinetic chain, terminal release through upper extremities" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">지면 → 팔 폭발</div>
-      <div class="spc" data-value="rotational momentum — hip pivot as axis, spinal torque transfer, shoulder-led angular velocity" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">골반 피벗 회전</div>
-      <div class="spc" data-value="gravitational load — body yields, trailing limb inertia, joint impact absorption on landing" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">중력 낙하 착지</div>
-      <div class="spc" data-value="compression-release cycle — eccentric contraction loading, spring-force concentric release" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">압축 → 반발</div>
-      <div class="spc" data-value="off-axis external impact — lateral center-of-mass shift, secondary ripple from contact point" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">외부 충격 반작용</div>
+  <div style="display:flex;align-items:center;gap:6px;margin-top:6px;flex-wrap:wrap">
+    <span style="font-family:var(--fm);font-size:12px;color:var(--txd)">이펙트 밀도</span>
+    <div class="shot-density-chips" style="display:flex;gap:4px">
+      <div class="sdc active" data-value="" style="font-family:var(--fm);font-size:12px;padding:2px 8px;border-radius:4px;background:var(--sf2);border:.5px solid var(--bd);color:var(--txd);cursor:pointer">없음</div>
+      <div class="sdc" data-value="LOW DENSITY" style="font-family:var(--fm);font-size:12px;padding:2px 8px;border-radius:4px;background:var(--sf2);border:.5px solid var(--bd);color:var(--txd);cursor:pointer">LOW</div>
+      <div class="sdc" data-value="MEDIUM DENSITY" style="font-family:var(--fm);font-size:12px;padding:2px 8px;border-radius:4px;background:var(--sf2);border:.5px solid var(--bd);color:var(--txd);cursor:pointer">MEDIUM</div>
+      <div class="sdc" data-value="HIGH DENSITY" style="font-family:var(--fm);font-size:12px;padding:2px 8px;border-radius:4px;background:var(--sf2);border:.5px solid var(--bd);color:var(--txd);cursor:pointer">HIGH</div>
     </div>
-    <div style="font-family:var(--fm);font-size:8.5px;color:var(--txd);margin-bottom:6px">연쇄 반응</div>
+    <label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-left:6px">
+      <input type="checkbox" class="shot-signature" onchange="generate()" style="accent-color:var(--ac);width:12px;height:12px">
+      <span style="font-family:var(--fm);font-size:12px;color:var(--ac)">⭐ 시그니처 샷</span>
+    </label>
+  </div>
+  <button class="shot-phys-toggle" onclick="toggleShotPhys(this)" style="margin-top:6px;width:100%;font-family:var(--fm);font-size:12px;padding:4px;border-radius:5px;border:.5px solid var(--bd);background:transparent;color:var(--txd);cursor:pointer;text-align:left;transition:all .15s">▸ 물리 반응 추가</button>
+  <div class="shot-phys-panel" style="display:none;margin-top:6px;padding:8px;background:var(--bg);border-radius:6px;border:.5px solid var(--bd)">
+    <div style="font-family:var(--fm);font-size:12px;color:var(--txd);margin-bottom:6px">힘의 전달</div>
+    <div class="shot-force-chips" style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:8px">
+      <div class="spc" data-value="" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm);text-align:center">없음</div>
+      <div class="spc" data-value="kinetic chain reaction — ground force through lower kinetic chain, terminal release through upper extremities" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">지면 → 팔 폭발</div>
+      <div class="spc" data-value="rotational momentum — hip pivot as axis, spinal torque transfer, shoulder-led angular velocity" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">골반 피벗 회전</div>
+      <div class="spc" data-value="gravitational load — body yields, trailing limb inertia, joint impact absorption on landing" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">중력 낙하 착지</div>
+      <div class="spc" data-value="compression-release cycle — eccentric contraction loading, spring-force concentric release" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">압축 → 반발</div>
+      <div class="spc" data-value="off-axis external impact — lateral center-of-mass shift, secondary ripple from contact point" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">외부 충격 반작용</div>
+    </div>
+    <div style="font-family:var(--fm);font-size:12px;color:var(--txd);margin-bottom:6px">연쇄 반응</div>
     <div class="shot-react-chips" style="display:grid;grid-template-columns:1fr 1fr;gap:4px">
-      <div class="spc" data-value="" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm);text-align:center">없음</div>
-      <div class="spc" data-value="hair dramatically blown back, fabric trails with aerodynamic drag and tension" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">헤어 반동 + 드래그</div>
-      <div class="spc" data-value="garment billowing outward during deceleration, gravitational collapse on stop" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">옷감 부풀기 → 낙하</div>
-      <div class="spc" data-value="follow-through oscillation in fingers, earrings, loose fabric after halt" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">잔진동 — 손끝·귀걸이</div>
-      <div class="spc" data-value="ground-reaction shockwave propagates from plantar contact upward through skeletal column" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:9px;color:var(--txm)">지면 충격파 발→머리</div>
+      <div class="spc" data-value="" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm);text-align:center">없음</div>
+      <div class="spc" data-value="hair dramatically blown back, fabric trails with aerodynamic drag and tension" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">헤어 반동 + 드래그</div>
+      <div class="spc" data-value="garment billowing outward during deceleration, gravitational collapse on stop" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">옷감 부풀기 → 낙하</div>
+      <div class="spc" data-value="follow-through oscillation in fingers, earrings, loose fabric after halt" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">잔진동 — 손끝·귀걸이</div>
+      <div class="spc" data-value="ground-reaction shockwave propagates from plantar contact upward through skeletal column" style="background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:5px 7px;cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--txm)">지면 충격파 발→머리</div>
     </div>
   </div>`;
   container.appendChild(card);
@@ -2508,6 +2705,10 @@ function addShot(){
     const btn=document.getElementById('add-shot-btn');
     if(btn){btn.textContent='최대 4 shots';btn.style.opacity='.4';btn.disabled=true;}
   }
+  setTimeout(()=>{
+    initShotDensityChips(document.getElementById('shot-sequence-container'));
+    refreshShotDropdowns();
+  },60);
   generate();
 }
 
@@ -2534,6 +2735,259 @@ function removeShot(num){
 
 
 
+
+
+// ── AI 디렉터 ────────────────────────────────────────────────────
+// _aidImages 제거 — _regImgData로 통합
+let _aidShotCount = 2;
+
+function toggleAIDirector(){
+  const body=document.getElementById('ai-director-body');
+  const btn=document.getElementById('ai-director-toggle-btn');
+  const open=body.style.display==='none';
+  body.style.display=open?'block':'none';
+  btn.textContent=open?'접기':'펼치기';
+  btn.style.background=open?'var(--p3)':'var(--p3d)';
+  btn.style.color=open?'var(--bg)':'var(--p3)';
+}
+
+// handleAIFile/handleAIDrop → regLoadFile로 통합됨
+
+// Shot 수 칩 선택
+document.querySelectorAll('#aid-shot-count-chips .asc').forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    document.querySelectorAll('#aid-shot-count-chips .asc').forEach(c=>{
+      c.style.background='var(--sf2)'; c.style.borderColor='var(--bd)'; c.style.color='var(--txm)';
+      c.classList.remove('active');
+    });
+    chip.style.background='var(--p3d)'; chip.style.borderColor='var(--p3b)'; chip.style.color='var(--p3)';
+    chip.classList.add('active');
+    _aidShotCount=parseInt(chip.dataset.count);
+  });
+});
+
+async function runAIDirector(){
+  const direction=document.getElementById('aid-direction').value.trim();
+  if(!direction){ alert('방향성을 입력해주세요.'); return; }
+
+  const btn=document.getElementById('aid-generate-btn');
+  const loading=document.getElementById('aid-loading');
+  const errEl=document.getElementById('aid-error');
+  btn.style.display='none'; loading.style.display='block'; errEl.style.display='none';
+
+  try{
+    // 등록된 에셋 이미지 수집
+    const imageContent=[];
+    const regCards=Array.from(document.querySelectorAll('.reg-card'));
+    regCards.forEach(card=>{
+      const uid=card.id.replace(/-/g,'_');
+      const img=window._regImgData&&window._regImgData[uid];
+      const name=card.querySelector('input[type=text]')?.value.trim()||'에셋';
+      if(img){
+        imageContent.push({type:'text',text:`[${name} 이미지]:`});
+        imageContent.push({type:'image',source:{type:'base64',media_type:img.type,data:img.b64}});
+      }
+    });
+    imageContent.push({type:'text',text:`방향성: ${direction}
+생성할 Shot 수: ${_aidShotCount}
+
+위 이미지들과 방향성을 분석해서 Seedance 2.0용 Shot 시퀀스를 JSON으로 생성하세요. 반드시 JSON만 반환하고 마크다운 코드블록 없이 순수 JSON만 출력하세요.
+
+반환 형식:
+{"shots":[{"move":"카메라 무브 영어","size":"샷 사이즈 영어","angle":"앵글 영어","char":"@캐릭터명 (있으면)","scene":"@씬/배경명 (있으면)","object":"@오브젝트/메카명 (있으면)","creature":"@크리쳐명 (있으면)","desc":"샷 묘사 영어 2-3문장","desc_ko":"위 desc의 한글 요약 1문장","dialogue":"대사 (있으면, 없으면 빈 문자열)","force":"물리 힘 전달 (없으면 빈 문자열)","react":"연쇄 반응 (없으면 빈 문자열)","density":"없음 또는 LOW DENSITY 또는 MEDIUM DENSITY 또는 HIGH DENSITY","signature":true 또는 false}],"arc_act1":"에너지 아크 ACT1 영어","arc_act2":"에너지 아크 ACT2 영어","arc_act3":"에너지 아크 ACT3 영어"}`});
+
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1500,
+        system:'당신은 Seedance 2.0 전문 AI 영화 감독입니다. 사용자가 제공한 이미지와 방향성을 분석해 전문적인 Shot 시퀀스를 설계합니다. 반드시 순수 JSON만 반환하세요.',
+        messages:[{role:'user',content:imageContent}]
+      })
+    });
+
+    const data=await res.json();
+    if(data.error) throw new Error(data.error.message);
+    const raw=data.content.filter(c=>c.type==='text').map(c=>c.text).join('');
+    const parsed=JSON.parse(raw.replace(/```json?|```/g,'').trim());
+
+    // Shot 카드에 값 채우기
+    applyAIDirectorResult(parsed);
+
+  } catch(err){
+    errEl.textContent='오류: '+err.message;
+    errEl.style.display='block';
+  } finally {
+    btn.style.display='block'; loading.style.display='none';
+  }
+}
+
+function applyAIDirectorResult(data){
+  const shots=data.shots||[];
+  if(!shots.length) return;
+
+  // 기존 Shot 카드 초기화 (Shot 1만 남기고 제거)
+  const container=document.getElementById('shot-sequence-container');
+  const existingCards=Array.from(container.querySelectorAll('.shot-card'));
+  const existingDividers=Array.from(container.querySelectorAll('.shot-cut-div'));
+  existingCards.slice(1).forEach(c=>c.remove());
+  existingDividers.forEach(d=>d.remove());
+  _shotCount=1;
+
+  // 에너지 아크 반영
+  if(data.arc_act1) setSelectClosest('arc-act1', data.arc_act1);
+  if(data.arc_act2) setSelectClosest('arc-act2', data.arc_act2);
+  if(data.arc_act3) setSelectClosest('arc-act3', data.arc_act3);
+
+  // Shot 카드 채우기
+  shots.forEach((shot, idx)=>{
+    if(idx>0) addShot();
+    setTimeout(()=>{
+      const cards=container.querySelectorAll('.shot-card');
+      const card=cards[idx];
+      if(!card) return;
+      setSelectClosest2(card.querySelector('.shot-move'), shot.move);
+      setSelectClosest2(card.querySelector('.shot-size'), shot.size);
+      setSelectClosest2(card.querySelector('.shot-angle'), shot.angle);
+      if(shot.desc) {
+        const ta=card.querySelector('.shot-desc');
+        if(ta) ta.value=shot.desc_ko ? shot.desc + '\n\n[' + shot.desc_ko + ']' : shot.desc;
+      }
+      if(shot.dialogue) { const inp=card.querySelector('.shot-dialogue'); if(inp) inp.value=shot.dialogue; }
+      // 에셋 드롭다운
+      if(shot.char) setDropdownByValue(card.querySelector('.shot-char'), shot.char);
+      if(shot.scene) setDropdownByValue(card.querySelector('.shot-asset'), shot.scene);
+      if(shot.object) setDropdownByValue(card.querySelector('.shot-object'), shot.object);
+      if(shot.asset) setDropdownByValue(card.querySelector('.shot-asset'), shot.asset);
+      if(shot.creature) setDropdownByValue(card.querySelector('.shot-creature'), shot.creature);
+      // 밀도 칩
+      if(shot.density){
+        card.querySelectorAll('.shot-density-chips .sdc').forEach(c=>{
+          const match=c.dataset.value===shot.density||(shot.density==='없음'&&!c.dataset.value);
+          c.style.borderColor=match?'var(--p3b)':'var(--bd)';
+          c.style.color=match?'var(--p3)':'var(--txd)';
+          c.style.background=match?'var(--p3d)':'var(--sf2)';
+          c.classList.toggle('active', match);
+        });
+      }
+      // 시그니처
+      const sigCb=card.querySelector('.shot-signature');
+      if(sigCb) sigCb.checked=!!shot.signature;
+      // 물리 반응 — 값이 있으면 패널 펼치기
+      if(shot.force||shot.react){
+        const toggleBtn=card.querySelector('.shot-phys-toggle');
+        if(toggleBtn&&card.querySelector('.shot-phys-panel').style.display==='none') toggleShotPhys(toggleBtn);
+        setTimeout(()=>{
+          if(shot.force){
+            card.querySelectorAll('.shot-force-chips .spc').forEach(c=>{
+              const m=c.dataset.value&&shot.force.toLowerCase().includes(c.dataset.value.substring(0,15).toLowerCase());
+              if(m){ c.style.borderColor='var(--p3b)'; c.style.color='var(--p3)'; c.style.background='var(--p3d)'; }
+            });
+          }
+          if(shot.react){
+            card.querySelectorAll('.shot-react-chips .spc').forEach(c=>{
+              const m=c.dataset.value&&shot.react.toLowerCase().includes(c.dataset.value.substring(0,15).toLowerCase());
+              if(m){ c.style.borderColor='var(--p3b)'; c.style.color='var(--p3)'; c.style.background='var(--p3d)'; }
+            });
+          }
+        },100);
+      }
+    }, idx*80);
+  });
+
+  setTimeout(()=>{
+    initShotDensityChips(container);
+    generate();
+    // AI 디렉터 접기
+    toggleAIDirector();
+  }, shots.length*80+200);
+}
+
+// 셀렉트 best-match 헬퍼
+function setSelectClosest(id, val){
+  const el=document.getElementById(id); if(!el) return;
+  const v=val.toLowerCase();
+  let best=null, bestScore=0;
+  Array.from(el.options).forEach(opt=>{
+    const score=strSimilarity(opt.value.toLowerCase(),v);
+    if(score>bestScore){bestScore=score;best=opt;}
+  });
+  if(best&&bestScore>0.1) el.value=best.value;
+}
+function setSelectClosest2(el, val){
+  if(!el||!val) return;
+  const v=val.toLowerCase();
+  let best=null, bestScore=0;
+  Array.from(el.options).forEach(opt=>{
+    if(!opt.value) return;
+    const score=strSimilarity(opt.value.toLowerCase(),v);
+    if(score>bestScore){bestScore=score;best=opt;}
+  });
+  if(best) el.value=best.value;
+}
+function setDropdownByValue(el, val){
+  if(!el||!val) return;
+  const v=(val.startsWith('@')?val:'@'+val).toLowerCase();
+  Array.from(el.options).forEach(opt=>{
+    if(opt.value.toLowerCase()===v) el.value=opt.value;
+  });
+}
+function strSimilarity(a, b){
+  const wordsA=a.split(/[\s,]+/);
+  const wordsB=b.split(/[\s,]+/);
+  let match=0;
+  wordsA.forEach(w=>{ if(w.length>3&&wordsB.some(wb=>wb.includes(w)||w.includes(wb))) match++; });
+  return match/(Math.max(wordsA.length,1));
+}
+
+// ── 에셋 등록 초기 카드 생성 ─────────────────────────────────────
+(function(){
+  const c1=_makeRegCard('reg-char-list','reg-char-input','@CHARACTER','var(--p3)','reg-char-row-1','👤');
+  document.getElementById('reg-char-list').appendChild(c1);
+  const a1=_makeRegCard('reg-asset-list','reg-asset-input','@SCENE','var(--p2)','reg-asset-row-1','🏙️');
+  document.getElementById('reg-asset-list').appendChild(a1);
+  const o1=_makeRegCard('reg-object-list','reg-object-input','@OBJECT','#9ab8cc','reg-object-row-1','⚙️');
+  document.getElementById('reg-object-list').appendChild(o1);
+  const cr1=_makeRegCard('reg-creature-list','reg-creature-input','@CREATURE','var(--ac)','reg-creature-row-1','🐉');
+  document.getElementById('reg-creature-list').appendChild(cr1);
+})();
+// ── Shot 밀도 칩 이벤트 (동적 처리) ──────────────────────────────
+function initShotDensityChips(container){
+  container.querySelectorAll('.shot-density-chips').forEach(group=>{
+    group.querySelectorAll('.sdc').forEach(chip=>{
+      if(chip.dataset.dInit) return;
+      chip.dataset.dInit='1';
+      chip.addEventListener('click',()=>{
+        group.querySelectorAll('.sdc').forEach(c=>{
+          c.style.borderColor='var(--bd)';
+          c.style.color='var(--txd)';
+          c.style.background='var(--sf2)';
+          c.classList.remove('active');
+        });
+        chip.style.borderColor='var(--p3b)';
+        chip.style.color='var(--p3)';
+        chip.style.background='var(--p3d)';
+        chip.classList.add('active');
+        generate();
+      });
+      // 없음 칩 기본 활성화 표시
+      if(!chip.dataset.value){
+        chip.style.borderColor='var(--bd)';
+        chip.style.color='var(--txd)';
+      }
+    });
+  });
+}
+// 초기화
+document.querySelectorAll('#shot-card-1 .shot-density-chips').forEach(g=>{
+  const noneChip=g.querySelector('.sdc');
+  if(noneChip){noneChip.style.borderColor='var(--bd)';noneChip.style.color='var(--txd)';}
+});
+initShotDensityChips(document.getElementById('shot-sequence-container'));
+
+// addShot 패치 — 밀도 칩 초기화 포함
+// addShot 패치 통합됨 (함수 본체 직접 수정)
 // ── Shot 물리 반응 토글 ──────────────────────────────────────────
 function toggleShotPhys(btn){
   const panel=btn.nextElementSibling;
@@ -2585,61 +3039,150 @@ function atPrefix(name){ return name.startsWith('@')?name:'@'+name; }
 function refreshShotDropdowns(){
   const chars=getRegValues('.reg-char-input').map(atPrefix);
   const assets=getRegValues('.reg-asset-input').map(atPrefix);
+  const objects=getRegValues('.reg-object-input').map(atPrefix);
   const creatures=getRegValues('.reg-creature-input').map(atPrefix);
 
   document.querySelectorAll('#shot-sequence-container .shot-card').forEach(card=>{
     const sc=card.querySelector('.shot-char');
     const sa=card.querySelector('.shot-asset');
+    const so=card.querySelector('.shot-object');
     const scr=card.querySelector('.shot-creature');
 
     if(sc){const cur=sc.value; sc.innerHTML='<option value="">— 캐릭터 —</option>'+chars.map(c=>`<option value="${c}"${c===cur?' selected':''}>${c}</option>`).join('');}
-    if(sa){const cur=sa.value; sa.innerHTML='<option value="">— 씬/메카 —</option>'+assets.map(a=>`<option value="${a}"${a===cur?' selected':''}>${a}</option>`).join('');}
+    if(sa){const cur=sa.value; sa.innerHTML='<option value="">— 씬 —</option>'+assets.map(a=>`<option value="${a}"${a===cur?' selected':''}>${a}</option>`).join('');}
+    if(so){const cur=so.value; so.innerHTML='<option value="">— 오브젝트 —</option>'+objects.map(o=>`<option value="${o}"${o===cur?' selected':''}>${o}</option>`).join('');}
     if(scr){const cur=scr.value; scr.innerHTML='<option value="">— 크리쳐 —</option>'+creatures.map(c=>`<option value="${c}"${c===cur?' selected':''}>${c}</option>`).join('');}
   });
   generate();
 }
 
+// ── 에셋 등록 카드 생성 헬퍼 ────────────────────────────────────
+function _makeRegCard(listId, inputClass, placeholder, accentColor, rowId, icon='📎'){
+  const card=document.createElement('div');
+  card.className='reg-card'; card.id=rowId;
+  const uid=rowId.replace(/-/g,'_');
+  card.innerHTML=`
+    <!-- 썸네일 -->
+    <div class="reg-thumb" id="thumb_${uid}" onclick="document.getElementById('file_${uid}').click()" title="클릭·드롭·붙여넣기로 이미지 등록">
+      <span class="reg-thumb-placeholder">${icon}</span>
+      <input type="file" id="file_${uid}" accept="image/*" style="display:none" onchange="regLoadFile(this,'${uid}')">
+    </div>
+    <!-- 이름 입력 -->
+    <input type="text" class="${inputClass} reg-name-input" oninput="refreshShotDropdowns();updateAIDPreviewBar()" placeholder="${placeholder}"
+      style="flex:1;font-size:13px;background:transparent;border:none;outline:none;color:var(--txm)"
+      onpaste="regHandlePaste(event,'${uid}')">
+    <!-- 제거 -->
+    <button onclick="removeRegRow('${rowId}')" style="font-family:var(--fm);font-size:12px;padding:2px 7px;border-radius:3px;border:.5px solid rgba(229,115,115,.3);background:transparent;color:rgba(229,115,115,.6);cursor:pointer;flex-shrink:0">✕</button>`;
+
+  // 드롭 지원
+  const thumb=card.querySelector('.reg-thumb');
+  thumb.addEventListener('dragover',e=>e.preventDefault());
+  thumb.addEventListener('drop',e=>{e.preventDefault();regLoadFileFromDrop(e.dataTransfer.files[0],uid);});
+
+  return card;
+}
+
+function regLoadFile(input, uid){
+  const file=input.files[0]; if(!file||!file.type.startsWith('image/')) return;
+  const reader=new FileReader();
+  reader.onload=e=>regSetThumb(uid, e.target.result, file.type, e.target.result.split(',')[1]);
+  reader.readAsDataURL(file);
+}
+
+function regLoadFileFromDrop(file, uid){
+  if(!file||!file.type.startsWith('image/')) return;
+  const reader=new FileReader();
+  reader.onload=e=>regSetThumb(uid, e.target.result, file.type, e.target.result.split(',')[1]);
+  reader.readAsDataURL(file);
+}
+
+function regHandlePaste(e, uid){
+  const items=e.clipboardData?.items;
+  if(!items) return;
+  for(const item of items){
+    if(item.type.startsWith('image/')){
+      e.preventDefault();
+      const file=item.getAsFile();
+      regLoadFileFromDrop(file, uid);
+      return;
+    }
+  }
+}
+
+function regSetThumb(uid, src, type, b64){
+  const thumb=document.getElementById('thumb_'+uid);
+  if(!thumb) return;
+  thumb.querySelector('.reg-thumb-placeholder').style.display='none';
+  let img=thumb.querySelector('img');
+  if(!img){img=document.createElement('img');thumb.appendChild(img);}
+  img.src=src;
+  // 데이터 저장
+  if(!window._regImgData) window._regImgData={};
+  window._regImgData[uid]={b64, type};
+  thumb.style.borderColor='var(--p3b)';
+  updateAIDPreviewBar();
+}
+
+function updateAIDPreviewBar(){
+  const bar=document.getElementById('aid-asset-preview-bar');
+  if(!bar) return;
+  const noMsg=document.getElementById('aid-no-assets');
+  const cards=Array.from(document.querySelectorAll('.reg-card'));
+  const withImg=cards.filter(c=>{
+    const uid=c.id.replace(/-/g,'_');
+    return window._regImgData&&window._regImgData[uid];
+  });
+  if(withImg.length===0){
+    bar.innerHTML='<span style="font-family:var(--fm);font-size:12px;color:var(--txd)" id="aid-no-assets">에셋 등록 섹션에서 이미지를 먼저 등록하세요</span>';
+    return;
+  }
+  bar.innerHTML=withImg.map(c=>{
+    const uid=c.id.replace(/-/g,'_');
+    const inp=c.querySelector('.reg-name-input');
+    const name=inp&&inp.value.trim()?inp.value.trim():'(이름 없음)';
+    const src=window._regImgData[uid];
+    return `<div style="display:flex;align-items:center;gap:4px;background:var(--sf2);border:.5px solid var(--bd);border-radius:5px;padding:3px 7px 3px 4px">
+      <img src="data:${src.type};base64,${src.b64}" style="width:22px;height:22px;border-radius:3px;object-fit:cover">
+      <span style="font-family:var(--fm);font-size:12px;color:var(--txm)">${name}</span>
+    </div>`;
+  }).join('');
+}
+
 function addRegChar(){
   _regCharCount++;
-  const list=document.getElementById('reg-char-list');
-  const row=document.createElement('div');
-  row.className='reg-row'; row.id=`reg-char-row-${_regCharCount}`;
-  row.style.cssText='display:flex;gap:6px';
-  row.innerHTML=`<input type="text" class="reg-char-input" oninput="refreshShotDropdowns()" placeholder="@MIRA" style="flex:1;font-size:11px"><button onclick="removeRegRow('reg-char-row-${_regCharCount}')" style="font-family:var(--fm);font-size:8px;padding:2px 7px;border-radius:3px;border:.5px solid rgba(229,115,115,.3);background:transparent;color:rgba(229,115,115,.6);cursor:pointer;flex-shrink:0">✕</button>`;
-  list.appendChild(row);
+  const id=`reg-char-row-${_regCharCount}`;
+  const card=_makeRegCard('reg-char-list','reg-char-input','@CHARACTER','var(--p3)',id,'👤');
+  document.getElementById('reg-char-list').appendChild(card);
 }
-
 function addRegAsset(){
   _regAssetCount++;
-  const list=document.getElementById('reg-asset-list');
-  const row=document.createElement('div');
-  row.className='reg-row'; row.id=`reg-asset-row-${_regAssetCount}`;
-  row.style.cssText='display:flex;gap:6px';
-  row.innerHTML=`<input type="text" class="reg-asset-input" oninput="refreshShotDropdowns()" placeholder="@ZERO-MECH" style="flex:1;font-size:11px"><button onclick="removeRegRow('reg-asset-row-${_regAssetCount}')" style="font-family:var(--fm);font-size:8px;padding:2px 7px;border-radius:3px;border:.5px solid rgba(229,115,115,.3);background:transparent;color:rgba(229,115,115,.6);cursor:pointer;flex-shrink:0">✕</button>`;
-  list.appendChild(row);
+  const id=`reg-asset-row-${_regAssetCount}`;
+  const card=_makeRegCard('reg-asset-list','reg-asset-input','@SCENE','var(--p2)',id,'🏙️');
+  document.getElementById('reg-asset-list').appendChild(card);
 }
-
+let _regObjectCount=1;
+function addRegObject(){
+  _regObjectCount++;
+  const id=`reg-object-row-${_regObjectCount}`;
+  const card=_makeRegCard('reg-object-list','reg-object-input','@OBJECT','#9ab8cc',id,'⚙️');
+  document.getElementById('reg-object-list').appendChild(card);
+}
 function addRegCreature(){
   _regCreatureCount++;
-  const list=document.getElementById('reg-creature-list');
-  const row=document.createElement('div');
-  row.className='reg-row'; row.id=`reg-creature-row-${_regCreatureCount}`;
-  row.style.cssText='display:flex;gap:6px';
-  row.innerHTML=`<input type="text" class="reg-creature-input" oninput="refreshShotDropdowns()" placeholder="@MONSTER" style="flex:1;font-size:11px"><button onclick="removeRegRow('reg-creature-row-${_regCreatureCount}')" style="font-family:var(--fm);font-size:8px;padding:2px 7px;border-radius:3px;border:.5px solid rgba(229,115,115,.3);background:transparent;color:rgba(229,115,115,.6);cursor:pointer;flex-shrink:0">✕</button>`;
-  list.appendChild(row);
+  const id=`reg-creature-row-${_regCreatureCount}`;
+  const card=_makeRegCard('reg-creature-list','reg-creature-input','@CREATURE','var(--ac)',id,'🐉');
+  document.getElementById('reg-creature-list').appendChild(card);
 }
-
 function removeRegRow(id){
+  const uid=id.replace(/-/g,'_');
+  if(window._regImgData) delete window._regImgData[uid];
   document.getElementById(id)?.remove();
   refreshShotDropdowns();
+  updateAIDPreviewBar();
 }
 
 // addShot 후 드롭다운 동기화 패치
-const _origAddShot=addShot;
-addShot=function(){
-  _origAddShot();
-  setTimeout(refreshShotDropdowns,50);
-};
+// addShot 패치 통합됨
 // ── 군무 모드 토글 ────────────────────────────────────────────────
 let _choreoMode=false;
 function toggleChoreoMode(){
@@ -2663,13 +3206,13 @@ function addCharField(){
   row.className='char-field-row'; row.id=`char-field-${_charCount}`;
   row.style.cssText='display:flex;gap:6px;margin-bottom:4px';
   row.innerHTML=`<input type="text" class="char-input" oninput="generate()" placeholder="예: @MIRA" style="flex:1">
-  <select class="char-role" onchange="generate()" style="width:110px;font-size:10px">
+  <select class="char-role" onchange="generate()" style="width:110px;font-size:12px">
     <option value="">역할 없음</option>
     <option value="LEAD">LEAD</option>
     <option value="CENTER">CENTER</option>
     <option value="COMMANDS ATTENTION">COMMANDS ATTENTION</option>
   </select>
-  <button onclick="removeCharField(${_charCount})" style="font-family:var(--fm);font-size:8px;padding:2px 7px;border-radius:3px;border:.5px solid rgba(229,115,115,.3);background:transparent;color:rgba(229,115,115,.7);cursor:pointer;flex-shrink:0">✕</button>`;
+  <button onclick="removeCharField(${_charCount})" style="font-family:var(--fm);font-size:12px;padding:2px 7px;border-radius:3px;border:.5px solid rgba(229,115,115,.3);background:transparent;color:rgba(229,115,115,.7);cursor:pointer;flex-shrink:0">✕</button>`;
   container.appendChild(row);
   if(_charCount>=_MAX_CHARS){
     const btn=document.getElementById('add-char-btn');
@@ -2691,6 +3234,16 @@ function removeCharField(n){
       t.classList.toggle('active');
       generate();
     });
+  });
+});
+
+// ── 얼굴 에셋 카메라 하드웨어 칩 ─────────────────────────────
+document.querySelectorAll('#face-camera-hw-chips .odetail').forEach(t=>{
+  t.addEventListener('click',()=>{
+    const isA=t.classList.contains('active');
+    document.querySelectorAll('#face-camera-hw-chips .odetail').forEach(x=>x.classList.remove('active'));
+    if(!isA) t.classList.add('active');
+    generate();
   });
 });
 // ── 액션 퀄리티 칩 (단일) ──────────────────────────────────────
@@ -3327,7 +3880,10 @@ if(stBtn){
   stBtn.addEventListener('mouseover',()=>{stBtn.style.borderColor='var(--bdh)';stBtn.style.color='var(--tx)';});
   stBtn.addEventListener('mouseout',()=>{stBtn.style.borderColor='var(--bd)';stBtn.style.color='var(--txm)';});
 }
-const ST_PROMPT = `THE CHARACTER FROM IMAGE 1 WEARING THE OUTFIT FROM IMAGE 2.\nFULL BODY SHOT, WHITE CYCLORAMA, SOFT DIFFUSED KEY LIGHT, PHOTOREALISTIC.`;
+const ST_PROMPT = `USING IMAGE 1 AS THE CHARACTER IDENTITY REFERENCE AND IMAGE 2 AS THE COMPLETE OUTFIT REFERENCE, generate a new image of this character wearing this exact outfit.
+PRESERVE FROM IMAGE 1: facial features, skin tone, hair, and all unique identity markers.
+APPLY FROM IMAGE 2: every detail of the outfit including fabric texture, color, accessories, and hardware.
+FULL BODY SHOT (FS), HEAD TO TOE, WHITE CYCLORAMA BACKGROUND, THREE-POINT SOFTBOX LIGHTING, SOFT DIFFUSED KEY LIGHT, PHOTOREALISTIC.`;
 
 function copyScreenTest(){
   const btn=document.getElementById('st-copy-btn');
@@ -3347,10 +3903,8 @@ function copyScreenTest(){
 // ── Generate ───────────────────────────────────────────────────────────
 function clean(s){ return s.replace(/[\s,\.]+$/,'').trim(); }
 
-function generate(){
-  const blocks=[];
+function generatePhase1(blocks){
 
-  if(cp===1){
     // ── Face Asset prompt ──────────────────────────────────────────────
     const age=v('age'),ageNum=parseInt(age)||20;
     const agePrefix=ageNum<=25?'YOUNG':ageNum<=35?'YOUNG ADULT':ageNum<=45?'MATURE':ageNum<=55?'MIDDLE-AGED':'OLDER';
@@ -3381,7 +3935,10 @@ function generate(){
     // 의상 힌트 OUTFIT: 태그
     const outfitHint=v('face-render').includes('3D')||v('face-render').includes('STYLIZED')?'':'';
     // faceP 조합
-    const faceP=clean(`${st.faceShot} ${faceAngle} ${eth} (AGE ${age}), ${build}, ${attractStr}${arch}. ${skin}, ${eyes}. ${hair}. ${hairTextureStr}${hairAccStr}${makeupFull}${exprStr}${anchorStr}${faceLightStr}WHITE STUDIO BACKGROUND, SOFT CINEMATIC LIGHTING, ${faceRender}`.replace(/\s+/g,' '));
+    const poseStr=v('pose-action')?v('pose-action')+'. ':'';
+    const faceCamHw=Array.from(document.querySelectorAll('#face-camera-hw-chips .odetail.active')).map(t=>t.dataset.value).join(', ');
+    const faceCamStr=faceCamHw?faceCamHw+'. ':'';
+    const faceP=clean(`${st.faceShot} ${faceAngle} ${eth} (AGE ${age}), ${build}, ${attractStr}${arch}. ${skin}, ${eyes}. ${hair}. ${hairTextureStr}${hairAccStr}${makeupFull}${exprStr}${poseStr}${anchorStr}${faceLightStr}${faceCamStr}WHITE STUDIO BACKGROUND, SOFT CINEMATIC LIGHTING, ${faceRender}`.replace(/\s+/g,' '));
 
     // ── Outfit Asset prompt ────────────────────────────────────────────
     const palette=st.outfitPalette;
@@ -3465,8 +4022,8 @@ function generate(){
 
     const stP=ST_PROMPT;
 
-    blocks.push({id:'face',  cls:'pb-face',  label:'얼굴 에셋',text:faceP});
-    blocks.push({id:'outfit',cls:'pb-outfit',label:'의상 에셋',text:outP});
+    blocks.push({id:'face',  cls:'pb-face',  label:'얼굴 에셋',text:faceP.replace(', WHITE STUDIO BACKGROUND, SOFT CINEMATIC LIGHTING, '+faceRender,'').trim(),suffix:'WHITE STUDIO BACKGROUND, SOFT CINEMATIC LIGHTING, '+faceRender});
+    blocks.push({id:'outfit',cls:'pb-outfit',label:'의상 에셋',text:outP.replace('. WHITE STUDIO BACKGROUND, SOFT CINEMATIC LIGHTING, '+outStyleRender,'').trim(),suffix:'WHITE STUDIO BACKGROUND, SOFT CINEMATIC LIGHTING, '+outStyleRender});
     blocks.push({id:'st',    cls:'pb-fusion',label:'얼굴 + 의상',text:stP});
     // character sheet prompt
     const sheetViews=st.sheetViews.length?st.sheetViews.join(', '):'FRONT FULL BODY VIEW, BACK FULL BODY VIEW, FACE CLOSE-UP FRONT';
@@ -3476,9 +4033,11 @@ function generate(){
     const sheetPreviewEl=document.getElementById('sheet-prompt-preview');
     if(sheetPreviewEl) sheetPreviewEl.textContent=sheetP;
     blocks.push({id:'sheet',cls:'pb-sheet',label:'캐릭터 시트',text:sheetP});
-  }
+  
+}
 
-  else if(cp===2){
+function generatePhase2(blocks){
+
     const concept=document.getElementById('concept').value.trim();
     const settingCustom=document.getElementById('setting-custom')?.value.trim()||'';
     const sceneRatio=st.sceneRatio||'';
@@ -3502,7 +4061,7 @@ function generate(){
     const decayLine=decayVal?decayVal:'';
     const debrisLine=debrisVal?debrisVal:'';
     const atmosphereLine=[densityVal, v('lighting'), v('light-dir')].filter(Boolean).join(', ');
-    const techLine=[v('lens'), v('grade')||''].filter(Boolean).join(', ');
+    const techLine=[v('lens'), v('grade')||'', v('scene-camera-hw')||''].filter(Boolean).join(', ');
     const moodLine=[kws, concept].filter(Boolean).join('. ');
 
     const dofStr=[st.sceneDof||'', st.sceneBokeh||''].filter(Boolean).join(', ');
@@ -3521,8 +4080,9 @@ function generate(){
       dofStr,
       ratioStr,
     ].filter(Boolean);
-    const wP=clean(parts.join('. ')+bgSuffix);
-    blocks.push({id:'world',cls:'pb-world',label:'씬 세팅',text:wP});
+    const wP=clean(parts.join('. '));
+    const wSuffix=bgSuffix.replace(/^\. /,'');
+    blocks.push({id:'world',cls:'pb-world',label:'씬 세팅',text:wP,suffix:wSuffix||''});
     // 크리쳐 프롬프트 (선택)
     const cDesc2=document.getElementById('creature-desc')?.value.trim()||'';
     if(st.creatureType||cDesc2){
@@ -3562,15 +4122,16 @@ function generate(){
         matStr,
         behaviors,
         cDesc2,
-        cBg,
       ].filter(Boolean).join('. '));
-      blocks.push({id:'creature',cls:'pb-fusion',label:'크리쳐 에셋',text:cP});
+      blocks.push({id:'creature',cls:'pb-fusion',label:'크리쳐 에셋',text:cP,suffix:cBg});
     } else {
       blocks.push({id:'creature-ph',cls:'pb-fusion',label:'크리쳐 에셋',text:'② 크리쳐 생성 탭에서 아키타입을 선택하면 프롬프트가 생성됩니다.'});
     }
-  }
+  
+}
 
-  else if(cp===3){
+function generatePhase3(blocks){
+
     // ── 군무 모드 확인 ────────────────────────────────────────
     const isChoreoMode=_choreoMode;
 
@@ -3581,20 +4142,31 @@ function generate(){
 
     // ── Shot 시퀀스 수집 ──────────────────────────────────────
     const shotCards=Array.from(document.querySelectorAll('#shot-sequence-container .shot-card'));
+    const shotKoParts=[];
     const shotParts=shotCards.map((card,idx)=>{
       const move=card.querySelector('.shot-move')?.value||'';
       const size=card.querySelector('.shot-size')?.value||'';
       const angle=card.querySelector('.shot-angle')?.value||'';
       const shotChar=card.querySelector('.shot-char')?.value||'';
       const shotAsset=card.querySelector('.shot-asset')?.value||'';
+      const shotObject=card.querySelector('.shot-object')?.value||'';
       const shotCreature=card.querySelector('.shot-creature')?.value||'';
-      const desc=card.querySelector('.shot-desc')?.value.trim()||'';
+      const rawDesc=card.querySelector('.shot-desc')?.value.trim()||'';
+      const desc=rawDesc.replace(/\n?\[[^\]]*\]/g,'').trim();
+      // 한글 요약 추출 → 별도 블록
+      const koMatches=rawDesc.match(/\[([^\]]+)\]/g);
+      if(koMatches){
+        const n=idx+1;
+        const isLast=idx===shotCards.length-1&&shotCards.length>1;
+        const koPfx=n===1?'Shot 1':(isLast?`Final Shot`:`Shot ${n}`);
+        shotKoParts.push(`${koPfx}: ${koMatches.map(m=>m.slice(1,-1)).join(' ')}`);
+      }
       const dial=card.querySelector('.shot-dialogue')?.value.trim()||'';
       const n=idx+1;
       const isLast=idx===shotCards.length-1&&shotCards.length>1;
       const prefix=n===1?`SHOT 1`:(isLast?`FINAL SHOT`:`CUT TO SHOT ${n}`);
       const charAssetLine=[shotChar,shotAsset].filter(Boolean).join(' IN ');
-      const assetLine=[charAssetLine,shotCreature].filter(Boolean).join(', ');
+      const assetLine=[charAssetLine,shotObject,shotCreature].filter(Boolean).join(', ');
       // 물리 반응 수집
       const physPanel=card.querySelector('.shot-phys-panel');
       let shotForce='', shotReact='';
@@ -3605,10 +4177,17 @@ function generate(){
         shotReact=(rActive&&rActive.dataset.value)?rActive.dataset.value:'';
       }
       const physStr=[shotForce,shotReact].filter(Boolean).join('. ');
+      // 이펙트 밀도
+      const densityChip=card.querySelector('.shot-density-chips .sdc[style*="var(--p3)"],.shot-density-chips .sdc.active');
+      const density=(densityChip&&densityChip.dataset.value)?densityChip.dataset.value:'';
+      // 시그니처 샷
+      const isSig=card.querySelector('.shot-signature')?.checked||false;
+      const sigTag=isSig?' [SIGNATURE VISUAL EFFECT]':'';
       const body=[move,size,angle,assetLine,desc].filter(Boolean).join(', ');
       const dialStr=dial?` SHE SAYS: "${dial}".`:'';
       const physSuffix=physStr?' '+physStr+'.':'';
-      return (body||dial)?`${prefix}: ${body}.${physSuffix}${dialStr}`:'';
+      const densitySuffix=density?' ('+density+')':'';
+      return (body||dial)?`${prefix}${densitySuffix}${sigTag}: ${body}.${physSuffix}${dialStr}`:'';
     }).filter(Boolean);
     const shotSequence=shotParts.join(' ');
 
@@ -3620,12 +4199,17 @@ function generate(){
     const scLine=sc||'';
 
     // ── 메인 액션 프롬프트 조합 ───────────────────────────────
+    const arcAct1=v('arc-act1')||'';
+    const arcAct2=v('arc-act2')||'';
+    const arcAct3=v('arc-act3')||'';
+    const energyArc=[arcAct1,arcAct2,arcAct3].filter(Boolean).join(' → ');
     const actionP=clean([
       styleDecl,
       shotSequence,
       physExtra,
       scLine,
       moodParts,
+      energyArc?'ENERGY ARC: '+energyArc:'',
     ].filter(Boolean).join(' '));
 
     // ── 군무 프롬프트 (군무 모드 ON일 때만) ──────────────────
@@ -3646,32 +4230,40 @@ function generate(){
 
     // ── 블록 출력 ─────────────────────────────────────────────
     if(!isChoreoMode){
-      // 일반 액션 모드: 단일 통합 블록
-      blocks.push({id:'action', cls:'pb-phys',
-        label:'액션 연출',
-        text:actionP});
+      blocks.push({id:'action', cls:'pb-phys', label:'액션 연출', text:actionP});
     } else {
-      // 군무 모드: 액션 + 군무 두 블록
-      blocks.push({id:'action', cls:'pb-phys',
-        label:'액션 연출',
-        text:actionP});
-      if(choreoP) blocks.push({id:'ch', cls:'pb-choreo',
-        label:'군무 연출',
-        text:choreoP});
+      blocks.push({id:'action', cls:'pb-phys', label:'액션 연출', text:actionP});
+      if(choreoP) blocks.push({id:'ch', cls:'pb-choreo', label:'군무 연출', text:choreoP});
     }
-  }
+    // 한글 샷 요약 (별도 블록)
+    if(shotKoParts.length){
+      const koSummary=shotKoParts.join('\n');
+      blocks.push({id:'action-ko', cls:'pb-ko',
+        label:'샷 한글 요약 <span style="font-family:var(--fm);font-size:12px;color:var(--txd);font-style:italic">— 참고용 · 프롬프트 미포함</span>',
+        text:koSummary, noPrefix:true});
+    }
+  
+}
 
+function generate(){
+  const blocks=[];
+  if(cp===1)      generatePhase1(blocks);
+  else if(cp===2) generatePhase2(blocks);
+  else if(cp===3) generatePhase3(blocks);
   // Render blocks
   checkLightingMismatch();
   const container=document.getElementById('out-blocks');
   container.innerHTML=blocks.map(b=>{
     const divider=b.id==='sheet'?`<div class="pb-step-divider"><span class="pb-step-dot"></span><span class="pb-step-text">Nano Banana Pro 결과물 → Soul Cinema에 업로드 후 사용</span></div>`:'';
+    const suffixHtml=b.suffix?`
+      <div class="pb-suffix-divider"></div>
+      <div class="pb-suffix-text" data-suffix="${b.suffix.replace(/"/g,'&quot;')}">${b.suffix}</div>`:'';
     return `${divider}<div class="pb-block ${b.cls}">
       <div class="pb-header">
         <span class="pb-label">${b.label}</span>
         <button class="pb-copy" data-copy-id="${b.id}">복사</button>
       </div>
-      <div class="pb-text" id="pb-${b.id}">${b.text}</div>
+      <div class="pb-text" id="pb-${b.id}">${b.text}</div>${suffixHtml}
     </div>`;
   }).join('');
 
@@ -3692,7 +4284,9 @@ function copyBlock(id){
   const el=document.getElementById('pb-'+id);
   if(!el)return;
   const btn=el.closest('.pb-block').querySelector('.pb-copy');
-  const text=el.textContent;
+  const suffixEl=el.closest('.pb-block').querySelector('.pb-suffix-text');
+  const suffixTxt=suffixEl?'\n'+suffixEl.dataset.suffix:'';
+  const text=el.textContent+suffixTxt;
   function flashBtn(){
     if(!btn)return;
     btn.textContent='✓ 복사됨';btn.classList.add('flash');
@@ -3754,7 +4348,7 @@ function resetAll(){
   document.querySelectorAll('#hair-acc-tags .achip').forEach(c=>c.classList.remove('active'));
   document.querySelectorAll('#face-lighting-chips .mchip').forEach((c,i)=>c.classList.toggle('active',i===0));
   document.querySelectorAll('#outfit-palette .opchip').forEach((c,i)=>c.classList.toggle('active',i===0));
-  Object.assign(st,{outfit:'minimal casual outfit, clean structured lines',anchors:[],actionQuality:'A HIGH-FIDELITY CGI, CINEMATIC ACTION-MOVIE STYLE',actionGenre:'',choreo:'Canon offset — same movement staggered by 2 beats per performer',kw:[],faceShot:'MEDIUM SHOT (MS), WAIST-UP FRAME,',outfitShot:'FULL SHOT (FS), HEAD-TO-TOE FRAME,',archetype:'',makeup:'NATURAL MINIMAL MAKEUP, CLEAN SKIN FOCUS',makeupIntensity:'SUBTLE APPLICATION, SHEER COVERAGE, BARELY-THERE FINISH',hairTexture:'',hairAcc:[],faceLighting:'STUDIO SOFTBOX DIFFUSION, EVEN FILL LIGHT, FLAT KEY',outfitPalette:'OLIVE KHAKI AND EARTH TONES',force:'kinetic chain reaction — ground force through lower kinetic chain, torso as transfer node, terminal release through upper extremities',sceneSettings:[],sceneDensity:[],sceneQuality:'A HIGHLY CINEMATIC, PHOTOREALISTIC LIVE-ACTION STILL OF A',sceneRenderer:'',sceneScale:[],sceneArch:[],sceneDecay:[],sceneDebris:[],sceneRatio:'',sceneDof:'',sceneBokeh:'',sceneBgOnly:true,creatureType:'',creatureBody:[],creatureSize:[],creatureMaterial:[],creatureFeatures:[],creatureBehavior:[],creatureFacing:[],creatureShot:'FULL BODY SHOT, HEAD TO TOE,',reaction:'hair secondary delay — 2-frame offset from primary action, fabric trailing with aerodynamic drag and tension arc',sheetViews:['FRONT FULL BODY VIEW','BACK FULL BODY VIEW','FACE CLOSE-UP FRONT'],outfitAccChips:[],topType:'',topMaterials:[],topFit:[],topDetails:[],topNeckline:[],topBaseLayer:[],outerType:'',outerVolume:[],outerDetails:[],outerWearing:[],bottomType:'',bottomMaterials:[],bottomFit:[],bottomDetails:[],shoeType:'',styleMoodChips:[],outfitHardware:[]});
+  Object.assign(st,{outfit:'minimal casual outfit, clean structured lines',anchors:[],actionQuality:'A HIGH-FIDELITY CGI, CINEMATIC ACTION-MOVIE STYLE',actionGenre:'',choreo:'Canon offset — same movement staggered by 2 beats per performer',kw:[],faceShot:'MEDIUM SHOT (MS), WAIST-UP FRAME,',outfitShot:'FULL SHOT (FS), HEAD-TO-TOE FRAME,',archetype:'',makeup:'NATURAL MINIMAL MAKEUP, CLEAN SKIN FOCUS',makeupIntensity:'SUBTLE APPLICATION, SHEER COVERAGE, BARELY-THERE FINISH',hairTexture:'',hairAcc:[],faceLighting:'STUDIO SOFTBOX DIFFUSION, EVEN FILL LIGHT, FLAT KEY',outfitPalette:'OLIVE KHAKI AND EARTH TONES',sceneSettings:[],sceneDensity:[],sceneQuality:'A HIGHLY CINEMATIC, PHOTOREALISTIC LIVE-ACTION STILL OF A',sceneRenderer:'',sceneScale:[],sceneArch:[],sceneDecay:[],sceneDebris:[],sceneRatio:'',sceneDof:'',sceneBokeh:'',sceneBgOnly:true,creatureType:'',creatureBody:[],creatureSize:[],creatureMaterial:[],creatureFeatures:[],creatureBehavior:[],creatureFacing:[],creatureShot:'FULL BODY SHOT, HEAD TO TOE,',sheetViews:['FRONT FULL BODY VIEW','BACK FULL BODY VIEW','FACE CLOSE-UP FRONT'],outfitAccChips:[],topType:'',topMaterials:[],topFit:[],topDetails:[],topNeckline:[],topBaseLayer:[],outerType:'',outerVolume:[],outerDetails:[],outerWearing:[],bottomType:'',bottomMaterials:[],bottomFit:[],bottomDetails:[],shoeType:'',styleMoodChips:[],outfitHardware:[]});
   setStab('ref');
   generate();
 }
