@@ -2679,7 +2679,7 @@ select option{color:var(--tx);background:var(--sf2)}
       </div>
       <div style="padding:16px 18px">
         <div id="logo-prompt-text"
-          style="font-family:var(--fm);font-size:13px;line-height:1.9;color:var(--ac);letter-spacing:.01em;word-break:break-word">Based on the first image, create a 3D graphic text for '<span id="logo-title-display" style="color:var(--p1)">Tittle</span>' that complements this style. The background should be black, and output only the text</div>
+          style="font-family:var(--fm);font-size:13px;line-height:1.9;color:var(--ac);letter-spacing:.01em;word-break:break-word">Based on the first image, create a 3D graphic text for '<span id="logo-title-display" style="color:var(--p1)">Tittle</span>' that complements this style. The background should be black, Front view, and output only the text</div>
       </div>
     </div>
   </div>
@@ -6149,7 +6149,7 @@ function generateLogoPrompt(){
 
 function copyLogoPrompt(){
   const title=(document.getElementById('logo-title-input')?.value||'').trim()||'Tittle';
-  const text=`Based on the first image, create a 3D graphic text for '${title}' that complements this style. The background should be black, and output only the text`;
+  const text=`Based on the first image, create a 3D graphic text for '${title}' that complements this style. The background should be black, Front view, and output only the text`;
   const btn=document.getElementById('logo-copy-btn');
   const flash=()=>{if(btn){btn.textContent='✓ 복사됨';setTimeout(()=>{btn.textContent='복사';},1400);}};
   navigator.clipboard?.writeText(text).then(flash).catch(()=>{
